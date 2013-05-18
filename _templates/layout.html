@@ -1,0 +1,17 @@
+{# Some tweaks to the Haiku theme #}
+
+{%- extends "!layout.html" %}
+
+{%- block htmltitle %}
+    <title>Puzzles</title>
+{% endblock %}
+
+
+{%- block haikuheader %}
+    <h1 class="heading">
+        <a href="{{ pathto('index') }}">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+{% endblock %}
+
