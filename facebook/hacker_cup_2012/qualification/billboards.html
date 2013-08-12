@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Qualification Round" href="../qualification.html" />
+    <link rel="next" title="Round 1" href="../round_1.html" />
+    <link rel="prev" title="Auction" href="auction.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="auction.html">Auction</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="../round_1.html">Round 1</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="billboards">
+<h1>Billboards<a class="headerlink" href="#billboards" title="Permalink to this headline">¶</a></h1>
+<p>We are starting preparations for Hacker Cup 2013 really early. Our first step
+is to prepare billboards to advertise the contest. We have text for hundreds
+of billboards, but we need your help to design them.</p>
+<p>The billboards are of different sizes, but are all rectangular. The billboard
+widths and heights are all integers. We will supply you with the size in inches
+and the text we want printed. We want you to tell us how large we can print the
+text, such that it fits on the billboard without splitting any words across
+lines. Since this is to attract hackers like yourself, we will use a monospace
+font, meaning that all characters are of the same width (e.g.. &#8216;l&#8217; and &#8216;m&#8217; take
+up the same horizontal space, as do space characters). The characters in our
+font are of equal width and height, and there will be no additional spacing
+between adjacent characters or adjacent rows. If you print a word on one line
+and print the next word on the next line, you do not need to print a space
+between them.</p>
+<p>Let&#8217;s say we want to print the text &#8220;Facebook Hacker Cup 2013&#8221; on a 350x100&#8221;
+billboard. If we use a font size of 33&#8221; per character, then we can print
+&#8220;Facebook&#8221; on the first line, &#8220;Hacker Cup&#8221; on the second and &#8220;2013&#8221; on the
+third. The widest of the three lines is &#8220;Hacker Cup&#8221;, which is 330&#8221; wide. There
+are three lines, so the total height is 99&#8221;. We cannot go any larger.</p>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>The first line of the input file contains a single integer T: the number of
+test cases. T lines follow, each representing a single test case in the form
+&#8220;W H S&#8221;. W and H are the width and height in inches of the available space. S
+is the text to be written.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>Output T lines, one for each test case. For each case, output &#8220;Case #t: s&#8221;,
+where t is the test case number (starting from 1) and s is the maximum font
+size, in inches per character, we can use. The size must be an integral number
+of inches. If the text does not fit when printed at a size of 1&#8221;, then output
+0.</p>
+</div>
+<div class="section" id="constraints">
+<h2>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h2>
+<p>1 ≤ T ≤ 20</p>
+<p>1 ≤ W, H ≤ 1000</p>
+<p>The text will contain only lower-case letters a-z, upper-case letters A-Z, digits 0-9 and the space character</p>
+<p>The text will not start or end with the space character, and will never contain two adjacent space characters</p>
+<p>The text in each case contains at most 1000 characters</p>
+</div>
+<div class="section" id="example-input">
+<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>5
+20 6 hacker cup
+100 20 hacker cup 2013
+10 20 MUST BE ABLE TO HACK
+55 25 Can you hack
+100 20 Hack your way to the cup
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>Case #1: 3
+Case #2: 10
+Case #3: 2
+Case #4: 8
+Case #5: 7
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.facebook.com/hackercup/problems.php?pid=215823855164332&amp;round=146094915502528">View online</a>.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="auction.html">Auction</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="../round_1.html">Round 1</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

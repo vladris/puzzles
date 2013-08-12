@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Round 3" href="../round_3.html" />
+    <link rel="prev" title="Name the Baby" href="name_the_baby.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="name_the_baby.html">Name the Baby</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="greedy-entertainers">
+<h1>Greedy Entertainers<a class="headerlink" href="#greedy-entertainers" title="Permalink to this headline">¶</a></h1>
+<p>You are the King of Byteland, which now consists of <strong>K</strong> rival states. The
+national day of Byteland is approaching, and it is a day of great merriment.
+Each of the <strong>K</strong> states is throwing its own party. Fortunately your kingdom
+also has <strong>N</strong> rich and famous entertainers, numbered from <strong>0</strong> to <strong>N-1</strong>.
+Its your job to allocate to each state, some non empty set of entertainers.
+Note that the same entertainer cannot be allocated to two different states.
+Some entertainers may be unallocated. Also to each allocated entertainer, you
+must pay <strong>C</strong> coins to hire him.</p>
+<p>The trouble is, some of the entertainers are fond of some others, and refuse to
+spend the national day without their friends, meaning they insist on being
+allocated to the same state if they are allocated). Under this constraint, you
+find out that allocating entertainers to the states becomes impossible. So you
+appeal to them to relax their requirements, and they ask you to donate more
+money to the entertainment industry. More formally, you will be provided with a
+2-dimensional array <strong>R</strong>. If the total amount of money you donate is less than
+<strong>R[u][v]</strong>, for <strong>u</strong> not equal to <strong>v</strong>, then entertainer <strong>#u</strong> will NOT
+agree to spend the national day without the company of entertainer <strong>#v</strong>. Note
+that if you do not allocate entertainer <strong>#u</strong>, then you can safely ignore his
+restrictions. <strong>R[u][v]</strong> need not be equal to <strong>R[v][u]</strong>.</p>
+<p>You are free to donate any non-negative amount of coins as you see fit. Find
+out the minimum expenditure you must make to satisfy all entertainers and all
+states. Note that your total expenditure is : (the amount of money you donate +
+<strong>C</strong> * the number of allocated entertainers).</p>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>The first line contains <strong>T</strong>, the number of test cases. Each test contains 3
+lines.</p>
+<ul class="simple">
+<li>The first line contains 3 integers <strong>N</strong>, <strong>K</strong>, <strong>C</strong>.</li>
+<li>The second line contains 4 integers <strong>x1</strong>, <strong>a1</strong>, <strong>b1</strong>, <strong>m1</strong></li>
+<li>The third line contains 4 integers <strong>x2</strong>, <strong>a2</strong>, <strong>b2</strong>, <strong>m2</strong></li>
+</ul>
+<p>Using these values, the array <strong>R</strong> can be generated as follows:</p>
+<div class="highlight-text"><div class="highlight"><pre>Let f1[0] = x1, f2[0] = x2;
+f1[i] = (a1 * f1[i-1] + b1) % m1 for i ≥ 1
+f2[i] = (a2 * f2[i-1] + b2) % m2 for i ≥ 1
+If i &gt; j, R[i][j] = f1[ i * (i-1) / 2 + j ]
+If i &lt; j, R[i][j] = f2[ j * (j-1) / 2 + i ]
+</pre></div>
+</div>
+<p>Note that <strong>R</strong>[<strong>i</strong>][<strong>j</strong>] is not defined for <strong>i</strong> = <strong>j</strong>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>For test case numbered <strong>i</strong>, output &#8220;Case #i: &#8221; followed by the minimum number
+of coins you must spend to satisfy everybody.</p>
+</div>
+<div class="section" id="constraints">
+<h2>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h2>
+<p><strong>T</strong> ≤ 20</p>
+<p>1 ≤ <strong>N</strong> ≤ 1111</p>
+<p>1 ≤ <strong>K</strong> ≤ <strong>N</strong></p>
+<p>1 ≤ <strong>C</strong> ≤ 1000000000</p>
+<p>0 ≤ <strong>x1</strong>, <strong>a1</strong>, <strong>b1</strong> ≤ 1000000000</p>
+<p>0 ≤ <strong>x2</strong>, <strong>a2</strong>, <strong>b2</strong> ≤ 1000000000</p>
+<p>1 ≤ <strong>m1</strong>, <strong>m2</strong> ≤ 1000000000</p>
+</div>
+<div class="section" id="explanation-of-sample-cases">
+<h2>Explanation of Sample Cases<a class="headerlink" href="#explanation-of-sample-cases" title="Permalink to this headline">¶</a></h2>
+<p>In case 1, we get R[1][0] = 20 and R[0][1] = 8. The optimal choice is to donate 8 coins, and allocate entertainer #0 to the only state.</p>
+<p>In case 2, R[1][0] = 20 and R[0][1] = 12. The optimal choice here is to donate 0 coins, and allocate both entertainers to the only state.</p>
+<p>In case 5, the matrix R look like this:</p>
+<div class="highlight-text"><div class="highlight"><pre>---  800 1600
+400  ---   400
+800 1200  ---
+</pre></div>
+</div>
+<p>The optimal choice is to donate 1600 coins, and allocate one entertainer to each state.</p>
+</div>
+<div class="section" id="example-input">
+<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>5
+2 1 10
+20 0 0 100
+8 0 0 100
+2 1 10
+20 0 0 100
+12 0 0 100
+2 2 10
+20 0 0 100
+12 0 0 100
+4 1 1
+105 7 23 1000
+14 201 1 1005
+3 3 1000
+400 1 400 2000
+800 1 800 2000
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>Case #1: 18
+Case #2: 20
+Case #3: 40
+Case #4: 4
+Case #5: 4600
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.facebook.com/hackercup/problems.php?pid=333827370055251&amp;round=402976459784646">View online</a>.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="name_the_baby.html">Name the Baby</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

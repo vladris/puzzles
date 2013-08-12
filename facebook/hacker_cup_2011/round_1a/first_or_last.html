@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Round 1A" href="../round_1a.html" />
+    <link rel="next" title="Power Overwhelming" href="power_overwhelming.html" />
+    <link rel="prev" title="After the Dance Battle" href="after_the_dance_battle.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="after_the_dance_battle.html">After the Dance Battle</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="power_overwhelming.html">Power Overwhelming</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="first-or-last">
+<h1>First or Last<a class="headerlink" href="#first-or-last" title="Permalink to this headline">¶</a></h1>
+<p>As a top driver in European racing circles, you find yourself taking more than
+your fair share of risks. You go into every race knowing it may be your last,
+but generally with the suspicion it won&#8217;t be. Today, however, may turn out to
+be different. The Fédération Internationale de l&#8217;Automobile has sanctioned a
+new track in the Bernese Alps that may prove to be death of anyone that dares
+brave its tight, awkwardly-banked turns and cliff-adjacent straightaways.</p>
+<p>Since you are a professional racing driver, you have considerable financial
+backing and support in preparing for your first race on this new course. A
+veritable consortium of physicists, software engineers, and drivers more
+expendable than yourself have determined, for each corner on the track, the
+probability of crashing during normal fast-paced driving and the probability
+of crashing during an overtake maneuver. A single crash will end the race for
+you. It is left to you to use this information to formulate your overall racing
+strategy.</p>
+<p>The race you will participate in will include <strong>R</strong> racers including yourself.
+Given your history of apparently effortlessly cruising past all opponents to
+victory, you will be starting at the rear of the pack to keep things
+interesting. You must use your knowledge of the track to get to first place by
+the time you have passed through the final turn. You can only overtake
+opponents during a turn, so you must choose the <strong>R</strong>-1 turns during which to
+overtake that will maximize your likelihood of finishing the race. This isn&#8217;t
+the charitable sort of racing that awards accolades like &#8220;second place&#8221;, so
+your only goal here is to defeat every single opponent.</p>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>Your input file will begin with a single integer <strong>N</strong>, the number of test
+cases to follow, followed by a newline. Each test case begins with a single
+line containing two integers, <strong>R</strong> as specified above and <strong>T</strong>, the number of
+turns on the track. Following this will be <strong>T</strong> pairs of integers where the
+ith pair represents the likelihood of crashing while overtaking and the
+likelihood of crashing during normal driving, respectively during the ith turn.
+For each of these integers <strong>p</strong>, consider the probability of the corresponding
+event to be 1/<strong>p</strong>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>Output, for each test case, the reduced fraction representing the probability
+that you will win the race. Your outputs should be separated only by
+whitespace.</p>
+</div>
+<div class="section" id="constraints">
+<h2>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h2>
+<p>10 &lt;= <strong>N</strong> &lt;= 30</p>
+<p>1 &lt;= <strong>T</strong> &lt;= 50</p>
+<p>1 &lt;= <strong>R</strong> &lt; <strong>T</strong></p>
+<p>1 &lt;= <strong>p</strong> &lt;= 500</p>
+</div>
+<div class="section" id="example-input">
+<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>5
+3 5 10 2 5 3 10 4 3 3 9 7
+2 2 118 80 400 316
+3 3 339 250 301 199 109 34
+2 4 9 9 482 417 211 120 151 69
+4 5 244 132 65 46 12 11 129 81 487 342
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>Case #1: 54/175
+Case #2: 36855/37288
+Case #3: 161352/164045
+Case #4: 495040/566703
+Case #5: 11435776/12904515
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.facebook.com/hackercup/problems.php?pid=193824447299680&amp;round=144428782277390">View online</a>.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="after_the_dance_battle.html">After the Dance Battle</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="power_overwhelming.html">Power Overwhelming</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

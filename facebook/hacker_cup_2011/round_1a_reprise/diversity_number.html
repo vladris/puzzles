@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Round 1A (reprise)" href="../round_1a_reprise.html" />
+    <link rel="next" title="Turn on the Lights" href="turn_on_the_lights.html" />
+    <link rel="prev" title="Round 1A (reprise)" href="../round_1a_reprise.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="../round_1a_reprise.html">Round 1A (reprise)</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="turn_on_the_lights.html">Turn on the Lights</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="diversity-number">
+<h1>Diversity Number<a class="headerlink" href="#diversity-number" title="Permalink to this headline">¶</a></h1>
+<p>Let&#8217;s call a sequence of integers a<sub>1</sub>, a<sub>2</sub>, ..., a<sub>N</sub>
+<em>almost monotonic</em> if first K elements are non-decreasing sequence and last
+N-K+1 elements are non-increasing sequence: a<sub>1</sub>≤a<sub>2</sub>≤...≤a<sub>K</sub> and a<sub>K</sub>≥a<sub>K+1</sub>≥...≥a<sub>N</sub>.</p>
+<p>The diversity number of a sequence a<sub>1</sub>, a<sub>2</sub>, ..., a<sub>N</sub>
+is the number of possible sequences b<sub>1</sub>, b<sub>2</sub>,..., b<sub>N</sub>
+for which 0≤b<sub>i</sub>&lt;a<sub>i</sub> and all of the numbers b<sub>1</sub>,
+b<sub>2</sub>,..., b<sub>N</sub> are different. The diversity number of an empty
+sequence is 1.</p>
+<p>You need to find the sum of the diversity numbers of all almost monotonic
+subsequences of a sequence. Since this number can be very large, find it
+modulo 1,000,000,007. A subsequence is a sequence that can be obtained from
+another sequence by deleting some elements without changing the order of the
+remaining elements. Two sequences are considered different if their lengths
+differ or there is at least one position at which they differ.</p>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>The first line of the input file consists of a single number <strong>T</strong>, the number
+of test cases. Each test case consists of a number <strong>M</strong>, the number of
+elements in a sequence, followed by <strong>M</strong> numbers <strong>n</strong>, elements of some
+sequence (note that this sequence is not necessarily <em>almost monotonic</em>). All
+tokens are whitespace-separated</p>
+</div>
+<div class="section" id="constraints">
+<h2>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h2>
+<p><strong>T</strong> = 20</p>
+<p>1 ≤ <strong>M</strong>, <strong>n</strong> ≤ 100</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>Output <strong>T</strong> lines, with the answer to each test case on a single line.</p>
+</div>
+<div class="section" id="example-input">
+<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>5
+1
+1
+2
+2 1
+3
+1 3 2
+4
+1 3 1 2
+4
+2 3 4 3
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>Case #1: 2
+Case #2: 5
+Case #3: 15
+Case #4: 17
+Case #5: 80
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.facebook.com/hackercup/problems.php?pid=127561170642475&amp;round=123802894356576">View online</a>.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="../round_1a_reprise.html">Round 1A (reprise)</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="turn_on_the_lights.html">Turn on the Lights</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Round 1" href="../round_1.html" />
+    <link rel="next" title="Round 2" href="../round_2.html" />
+    <link rel="prev" title="Recover the Sequence" href="recover_the_sequence.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="recover_the_sequence.html">Recover the Sequence</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="../round_2.html">Round 2</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="squished-status">
+<h1>Squished Status<a class="headerlink" href="#squished-status" title="Permalink to this headline">¶</a></h1>
+<p>Some engineers got tired of dealing with all the different ways of encoding
+status messages, so they decided to invent their own. In their new scheme, an
+encoded status message consists of a sequence of integers representing the
+characters in the message, separated by spaces. Each integer is between 1 and
+<strong>M</strong>, inclusive. The integers do not have leading zeroes. Unfortunately they
+decided to compress the encoded status messages by removing all the spaces!</p>
+<p>Your task is to figure out how many different encoded status messages a given
+compressed status message could have originally been. Because this number can
+be very large, you should return the answer modulo 4207849484 (0xfaceb00c in
+hex).</p>
+<p>For example, if the compressed status message is &#8220;12&#8221; it might have originally
+been &#8220;1 2&#8221;, or it might have originally been &#8220;12&#8221;. The compressed status
+messages are between 1 and 1000 characters long, inclusive. Due to database
+corruption, a compressed status may contain sequences of digits that could not
+result from removing the spaces in an encoded status message.</p>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>The input begins with a single integer, <strong>N</strong>, the number of compressed status
+messages you must analyze. This will be followed by <strong>N</strong> compressed status
+messages, each consisting of an integer <strong>M</strong>, the highest character code for
+that database, then the compressed status message, which will be a string of
+digits each in the range &#8216;0&#8217; to &#8216;9&#8217;, inclusive. All tokens in the input will be
+separated by some whitespace.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>For each of the test cases numbered in order from 1 to <strong>N</strong>, output &#8220;Case
+#<strong>i</strong>: &#8221; followed by a single integer containing the number of different
+encoded status messages that could be represented by the corresponding
+compressed sequence modulo 4207849484. If none are possible, output a 0.</p>
+</div>
+<div class="section" id="constraints">
+<h2>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h2>
+<p>5 &lt;= <strong>N</strong> &lt;= 25</p>
+<p>2 &lt;= <strong>M</strong> &lt;= 255</p>
+<p>1 &lt;= length of encoded status &lt;= 1000</p>
+</div>
+<div class="section" id="example-input">
+<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>5
+12
+12
+255
+219
+30
+1234321
+2
+101
+70 8675309
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>Case #1: 2
+Case #2: 4
+Case #3: 6
+Case #4: 0
+Case #5: 2
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.facebook.com/hackercup/problems.php?pid=348968131789235&amp;round=225705397509134">View online</a>.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="recover_the_sequence.html">Recover the Sequence</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="../round_2.html">Round 2</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

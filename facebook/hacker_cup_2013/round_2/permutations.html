@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Round 2" href="../round_2.html" />
+    <link rel="next" title="Round 3" href="../round_3.html" />
+    <link rel="prev" title="RoboElection" href="roboelection.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="roboelection.html">RoboElection</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="../round_3.html">Round 3</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="permutations">
+<h1>Permutations<a class="headerlink" href="#permutations" title="Permalink to this headline">¶</a></h1>
+<p>In this problem you need to count number of possible permutations <strong>p</strong> of the
+first <strong>N</strong> integers, given <strong>N-1</strong> constraints of the form <strong>p:sub:`i` &lt; p:sub:`j`</strong>.</p>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>The first line contains an integer <strong>T</strong>, <strong>T</strong> ≤ 20, followed by <strong>T</strong> test
+cases. Each test case begins with an integer <strong>N</strong>, <strong>N</strong> ≤ 1000, which is
+the number of integers in the permutation. The next <strong>N - 1</strong> lines each
+contain a single constraint in the following format: &#8220;<strong>i sign j</strong>&#8221;, where 0
+≤ <strong>i, j</strong> ≤ <strong>N - 1</strong> and sign is either &#8220;&lt;&#8221; or &#8220;&gt;&#8221;, which denotes whether
+the <strong>i</strong>-th element of the permutation should be less than or greater than the
+<strong>j</strong>-th element.</p>
+<p>It is guaranteed that it is not possible to partition indices into two disjoint
+sets A and B such that there is no constraint involving elements from both A
+and B.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>For each test case, output one single line with the number of permutations that
+satisfy all the constraints, following the output format shown in the example.
+The answer may be very large, so you should give the result modulo
+<strong>1000000007</strong>.</p>
+</div>
+<div class="section" id="example-input">
+<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>5
+2
+0 &lt; 1
+3
+0 &lt; 1
+2 &gt; 1
+5
+0 &lt; 2
+1 &lt; 2
+2 &lt; 3
+2 &lt; 4
+4
+0 &lt; 1
+0 &lt; 2
+0 &lt; 3
+6
+0 &gt; 1
+1 &gt; 2
+2 &gt; 3
+3 &gt; 4
+4 &gt; 5
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>Case #1: 1
+Case #2: 1
+Case #3: 4
+Case #4: 6
+Case #5: 1
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.facebook.com/hackercup/problems.php?pid=413074315443326&amp;round=499927843385312">View online</a>.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="roboelection.html">RoboElection</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="../round_3.html">Round 3</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

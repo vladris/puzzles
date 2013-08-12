@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Qualification Round" href="../qualification.html" />
+    <link rel="next" title="Studious Student" href="studious_student.html" />
+    <link rel="prev" title="Double Squares" href="double_squares.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="double_squares.html">Double Squares</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="studious_student.html">Studious Student</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="peg-game">
+<h1>Peg Game<a class="headerlink" href="#peg-game" title="Permalink to this headline">¶</a></h1>
+<p>At the arcade, you can play a simple game where a ball is dropped into the top
+of the game, from a position of your choosing. There are a number of pegs that
+the ball will bounce off of as it drops through the game. Whenever the ball
+hits a peg, it will bounce to the left with probability 0.5 and to the right
+with probability 0.5. The one exception to this is when it hits a peg on the
+far left or right side, in which case it always bounces towards the middle.</p>
+<p>When the game was first made, the pegs where arranged in a regular grid.
+However, it&#8217;s an old game, and now some of the pegs are missing. Your goal in
+the game is to get the ball to fall out of the bottom of the game in a specific
+location. Your task is, given the arrangement of the game, to determine the
+optimal place to drop the ball, such that the probability of getting it to this
+specific location is maximized.</p>
+<p>The image below shows an example of a game with five rows of five columns.
+Notice that the top row has five pegs, the next row has four pegs, the next
+five, and so on. With five columns, there are four choices to drop the ball
+into (indexed from 0). Note that in this example, there are three pegs missing.
+The top row is row 0, and the leftmost peg is column 0, so the coordinates of
+the missing pegs are (1,1), (2,1) and (3,2). In this example, the best place
+to drop the ball is on the far left, in column 0, which gives a 50% chance that
+it will end in the goal.</p>
+<div class="highlight-text"><div class="highlight"><pre>x.x.x.x.x
+ x...x.x
+x...x.x.x
+ x.x...x
+x.x.x.x.x
+ G
+</pre></div>
+</div>
+<p>&#8216;x&#8217; indicates a peg, &#8216;.&#8217; indicates empty space.</p>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>You should first read an integer <strong>N</strong>, the number of test cases. Each of the
+next <strong>N</strong> lines will then contain a single test case. Each test case will
+start with integers <strong>R</strong> and <strong>C</strong>, the number of rows and columns (<strong>R</strong> will
+be odd). Next, an integer <strong>K</strong> will specify the target column. Finally, an
+integer <strong>M</strong> will be followed by <strong>M</strong> pairs of integer <strong>r</strong><sub>i</sub> and
+<strong>c</strong><sub>i</sub>, giving the locations of the missing pegs.</p>
+</div>
+<div class="section" id="constraints">
+<h2>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h2>
+<p>1 ≤ <strong>N</strong> ≤ 100</p>
+<p>3 ≤ <strong>R</strong>, <strong>C</strong> ≤ 100</p>
+<p>The top and bottom rows will not have any missing pegs.</p>
+<p>Other parameters will all be valid, given <strong>R</strong> and <strong>C</strong>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>For each test case, you should output an integer, the location to drop the ball
+into, followed by the probability that the ball will end in columns <strong>K</strong>,
+formatted with exactly six digits after the decimal point (round the last
+digit, don&#8217;t truncate).</p>
+</div>
+<div class="section" id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<p>The input will be designed such that minor rounding errors will not impact the
+output (i.e. there will be no ties or near &#8211; up to 1E-9 &#8211; ties, and the
+direction of rounding for the output will not be impacted by small errors).</p>
+</div>
+<div class="section" id="example-input">
+<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>5
+5 4 0 1 2 2
+3 4 1 1 1 1
+3 3 1 2 1 1 1 0
+3 4 0 2 1 0 1 1
+3 4 0 1 1 1
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>Case #1: 0 0.375000
+Case #2: XXX
+Case #3: 1 1.000000
+Case #4: 0 1.000000
+Case #5: 0 0.500000
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.facebook.com/hackercup/problems.php?pid=157960964217186&amp;round=4">View online</a>.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="double_squares.html">Double Squares</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="studious_student.html">Studious Student</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

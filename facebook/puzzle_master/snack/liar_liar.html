@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Snack Difficulty Puzzles" href="../snack.html" />
+    <link rel="next" title="It’s A Small World" href="small_world.html" />
+    <link rel="prev" title="Gattaca" href="gattaca.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="gattaca.html">Gattaca</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="small_world.html">It&#8217;s A Small World</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="liar-liar">
+<h1>Liar, Liar<a class="headerlink" href="#liar-liar" title="Permalink to this headline">¶</a></h1>
+<p>As a newbie on a particular internet discussion board, you notice a distinct
+trend among its veteran members; everyone seems to be either unfailingly honest
+or compulsively deceptive. You decide to try to identify the members of the two
+groups, starting with the assumption that every senior member either never lies
+or never tells the truth. You compile as much data as possible, asking each
+person for a list of which people are liars. Since the people you are asking
+have been around on the board for a long time, you may assume that they have
+perfect knowledge of who is trustworthy and who is not. Each person will
+respond with a list of people that they accuse of being liars. Everyone on the
+board can see that you are a tremendous n00b, so they will grudgingly give you
+only partial lists of who the liars are. Of course these lists are not to be
+taken at face value because of all the lying going on.</p>
+<p>You must write a program to determine, given all the information you&#8217;ve
+collected from the discussion board members, which members have the same
+attitude toward the telling the truth. It&#8217;s a pretty popular discussion board,
+so your program will need to be able to process a large amount of data quickly
+and efficiently.</p>
+<div class="section" id="input-specifications">
+<h2>Input Specifications<a class="headerlink" href="#input-specifications" title="Permalink to this headline">¶</a></h2>
+<p>Your program must take a single command line argument; the name of a file. It
+must then open the file and read out the input data. The data begins with the
+number of veteran members <strong>n</strong> followed by a newline. It continues with <strong>n</strong>
+chunks of information, each defining the accusations made by a single member.
+Each chunk is formatted as follows:</p>
+<div class="highlight-text"><div class="highlight"><pre>&lt;accuser name&gt; &lt;m&gt;
+</pre></div>
+</div>
+<p>followed by <strong>m</strong> lines each containing the name of one member that the accuser
+says is a liar. accuser name and m are separated by some number of tabs and
+spaces. <strong>m</strong> will always be in [0, <strong>n</strong>]. All member names contain only
+alphabetic characters and are unique and case-sensitive.</p>
+<p>Example input file:</p>
+<div class="highlight-text"><div class="highlight"><pre>5
+Stephen   1
+Tommaso
+Tommaso   1
+Galileo
+Isaac     1
+Tommaso
+Galileo   1
+Tommaso
+George    2
+Isaac
+Stephen
+</pre></div>
+</div>
+</div>
+<div class="section" id="output-specifications">
+<h2>Output Specifications<a class="headerlink" href="#output-specifications" title="Permalink to this headline">¶</a></h2>
+<p>Your output must consist of two numbers separated by a single space and followed
+by a newline, printed to standard out. The first number is the size of the
+larger group between the liars and the non-liars. The second number is the size
+of the smaller group. You are guaranteed that exactly one correct solution
+exists for all test data.</p>
+<p>Example output:</p>
+<div class="highlight-text"><div class="highlight"><pre>3 2
+</pre></div>
+</div>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="gattaca.html">Gattaca</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="small_world.html">It&#8217;s A Small World</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>
