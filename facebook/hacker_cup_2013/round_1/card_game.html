@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Round 1" href="../round_1.html" />
+    <link rel="next" title="Security" href="security.html" />
+    <link rel="prev" title="Round 1" href="../round_1.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="../round_1.html">Round 1</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="security.html">Security</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="card-game">
+<h1>Card Game<a class="headerlink" href="#card-game" title="Permalink to this headline">¶</a></h1>
+<p>John is playing a game with his friends. The game&#8217;s rules are as follows: There
+is deck of <strong>N</strong> cards from which each person is dealt a hand of <strong>K</strong> cards.
+Each card has an integer value representing its strength. A hand&#8217;s strength is
+determined by the value of the highest card in the hand. The person with the
+strongest hand wins the round. Bets are placed before each player reveals the
+strength of their hand.</p>
+<p>John needs your help to decide when to bet. He decides he wants to bet when the
+strength of his hand is higher than the average hand strength. Hence John wants
+to calculate the average strength of ALL possible sets of hands. John is very
+good at division, but he needs your help in calculating the sum of the
+strengths of all possible hands.</p>
+<div class="section" id="problem">
+<h2>Problem<a class="headerlink" href="#problem" title="Permalink to this headline">¶</a></h2>
+<p>You are given an array <strong>a</strong> with <strong>N</strong> ≤ <strong>10 000</strong> different integer
+numbers and a number, <strong>K</strong>, where 1 ≤ <strong>K</strong> ≤ <strong>N</strong>. For all possible
+subsets of <strong>a</strong> of size <strong>K</strong> find the sum of their maximal elements modulo
+<strong>1 000 000 007</strong>.</p>
+</div>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>The first line contains the number of test cases <strong>T</strong>, where 1 ≤ <strong>T</strong> ≤ 25</p>
+<p>Each case begins with a line containing integers <strong>N</strong> and <strong>K</strong>. The next line
+contains <strong>N</strong> space-separated numbers 0 ≤ <strong>a [i]</strong> ≤ 2 000 000 000, which
+describe the array <strong>a</strong>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>For test case <strong>i</strong>, numbered from <strong>1</strong> to <strong>T</strong>, output &#8220;Case #i: &#8221;, followed
+by a single integer, the sum of maximal elements for all subsets of size <strong>K</strong>
+modulo 1 000 000 007.</p>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>For <strong>a = [3, 6, 2, 8]</strong> and <strong>N = 4</strong> and <strong>K = 3</strong>, the maximal numbers among
+all triples are <strong>6</strong>, <strong>8</strong>, <strong>8</strong>, <strong>8</strong> and the sum is <strong>30</strong>.</p>
+</div>
+<div class="section" id="example-input">
+<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>5
+4 3
+3 6 2 8
+5 2
+10 20 30 40 50
+6 4
+0 1 2 3 5 8
+2 2
+1069 1122
+10 5
+10386 10257 10432 10087 10381 10035 10167 10206 10347 10088
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>Case #1: 30
+Case #2: 400
+Case #3: 103
+Case #4: 1122
+Case #5: 2621483
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.facebook.com/hackercup/problems.php?pid=321892127915788&amp;round=189890111155691">View online</a>.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="../round_1.html">Round 1</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="security.html">Security</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

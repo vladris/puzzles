@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Qualification Round" href="../qualification.html" />
+    <link rel="next" title="Round 1" href="../round_1.html" />
+    <link rel="prev" title="Balanced Smileys" href="balanced_smileys.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="balanced_smileys.html">Balanced Smileys</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="../round_1.html">Round 1</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="find-the-min">
+<h1>Find the Min<a class="headerlink" href="#find-the-min" title="Permalink to this headline">¶</a></h1>
+<p>After sending smileys, John decided to play with arrays. Did you know that
+hackers enjoy playing with arrays? John has a zero-based index array, <strong>m</strong>,
+which contains <strong>n</strong> non-negative integers. However, only the first <strong>k</strong>
+values of the array are known to him, and he wants to figure out the rest.</p>
+<p>John knows the following: for each index <strong>i</strong>, where <strong>k</strong> &lt;= <strong>i</strong> &lt; <strong>n</strong>,
+<strong>m[i]</strong> is the minimum non-negative integer which is <em>not</em> contained in the
+previous <strong>*k*</strong>  values of <strong>m</strong>.</p>
+<p>For example, if <strong>k</strong> = 3, <strong>n</strong> = 4 and the known values of <strong>m</strong> are [2, 3,
+0], he can figure out that <strong>m</strong>[3] = 1.</p>
+<p>John is very busy making the world more open and connected, as such, he doesn&#8217;t
+have time to figure out the rest of the array. It is your task to help him.</p>
+<p>Given the first <strong>k</strong> values of <strong>m</strong>, calculate the n<sup>th</sup> value of this
+array. (i.e. <strong>m</strong>[<strong>n</strong> - 1]).</p>
+<p>Because the values of <strong>n</strong> and <strong>k</strong> can be very large, we use a pseudo-random
+number generator to calculate the first <strong>k</strong> values of <strong>m</strong>. Given
+non-negative integers <strong>a</strong>, <strong>b</strong>, <strong>c</strong> and positive integer <strong>r</strong>, the known
+values of <strong>m</strong> can be calculated as follows:</p>
+<div class="highlight-text"><div class="highlight"><pre>m[0] = a
+m[i] = (b * m[i - 1] + c) % r, 0 &lt; i &lt; k
+</pre></div>
+</div>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>The first line contains an integer <strong>T</strong> (<strong>T</strong> &lt;= 20), the number of test
+cases.</p>
+<p>This is followed by <strong>T</strong> test cases, consisting of 2 lines each.</p>
+<p>The first line of each test case contains 2 space separated integers, <strong>n</strong>,
+<strong>k</strong> (1 &lt;= <strong>k</strong> &lt;= 105, <strong>k</strong> &lt; <strong>n</strong> &lt;= 109).</p>
+<p>The second line of each test case contains 4 space separated integers <strong>a</strong>,
+<strong>b</strong>, <strong>c</strong>, <strong>r</strong> (0 &lt;= <strong>a</strong>, <strong>b</strong>, <strong>c</strong> &lt;= 109, <strong>1</strong> &lt;= <strong>r</strong> &lt;= 109).</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>For each test case, output a single line containing the case number and the
+<strong>n</strong><sup>th</sup> element of <strong>m</strong>.</p>
+</div>
+<div class="section" id="example-input">
+<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>5
+97 39
+34 37 656 97
+186 75
+68 16 539 186
+137 49
+48 17 461 137
+98 59
+6 30 524 98
+46 18
+7 11 9 46
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>Case #1: 8
+Case #2: 38
+Case #3: 41
+Case #4: 40
+Case #5: 12
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.facebook.com/hackercup/problems.php?pid=494433657264959&amp;round=185564241586420">View online</a>.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="balanced_smileys.html">Balanced Smileys</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="../round_1.html">Round 1</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

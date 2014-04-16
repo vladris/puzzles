@@ -1,0 +1,164 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Round 1C" href="../round_1c.html" />
+    <link rel="next" title="Round 2" href="../round_2.html" />
+    <link rel="prev" title="Polynomial Factoring" href="polynomial_factoring.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="polynomial_factoring.html">Polynomial Factoring</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="../round_2.html">Round 2</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="risky-slide">
+<h1>Risky Slide<a class="headerlink" href="#risky-slide" title="Permalink to this headline">¶</a></h1>
+<p>Being a confident and accomplished programmer, you are naturally widely
+considered to be one of the preeminent dancers of your generation.
+Unfortunately this means your dancing is under considerable public scrutiny,
+and your critics are often quick to point out when your moves seem to be
+getting stale. To prevent such a debacle, you are working on a new maneuver
+you&#8217;re calling &#8220;the risky slide&#8221;.</p>
+<p>You haven&#8217;t worked out some of the details like flourishes or vocalizations
+that will accompany the risky slide, but you do know that the core of the move
+is a standing slide across a stretch of dance floor. You need to perfect the
+execution of your slide, so you are looking for the ideal spot in your
+apartment to practice.</p>
+<p>You live a fairly ascetic lifestyle, so your apartment is a simple rectangle
+with a tiled floor and no furniture or contents of any kind. You will practice
+the risky slide by starting out standing at the edge of some tile and running
+parallel to one of the walls of the apartment, and at the transition between
+some pair of tiles you will go from running to sliding. Your goal is to achieve
+the longest possible slide, with distance measured as the number of tiles you
+completely traverse during the slide (partial traversal doesn&#8217;t count).</p>
+<p>This would be an easy problem, but the style of the tiles in your apartment
+introduces a complication. Each tile has a particular stickiness that affects
+both how well you can run and how well you can slide on it. Each tile has a
+stickiness rating between 1 and 9, inclusive. The stickiness affects your
+movement as follows:</p>
+<p>Running across a tile with stickiness <strong>s</strong> grants <strong>s</strong> units of kinetic
+energy. For example, a tile with stickiness 9 is not slippery at all and you
+can run across it very efficiently, whereas a tile with stickiness 1 is quite
+slippery and does not help you increase your kinetic energy much as you run
+across it.</p>
+<p>Sliding across a tile with stickiness <strong>s</strong> robs you of <strong>s</strong> units of kinetic
+energy. If a tile would reduce your kinetic energy below 0, you stop sliding
+somewhere in the middle of the tile and fail to traverse it completely.</p>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>Your input will consist of a single integer <strong>N</strong> followed by a newline and
+<strong>N</strong> test cases. Each case begins with a line containing integers <strong>R</strong> and
+<strong>C</strong>, the number of rows and columns, respectively, of tiles in your
+apartment. This will be followed by <strong>R</strong> lines, each containing a string of
+length <strong>C</strong>, describing the layout of the tiles in your apartment. The value
+of each element in these strings is the stickiness as defined above of the
+corresponding tile.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>Output, for each test case and separated by newlines, the maximal possible
+number of complete tiles that you can traverse in a single slide through
+your apartment.</p>
+</div>
+<div class="section" id="constraints">
+<h2>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h2>
+<p><strong>N</strong> ≤ 20</p>
+<p>1 ≤ <strong>R</strong>, <strong>C</strong> ≤ 50</p>
+<p>Characters representing tiles will all be between &#8216;1&#8217; and &#8216;9&#8217;, inclusive.</p>
+</div>
+<div class="section" id="example-input">
+<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>5
+1 1
+5
+2 3
+112
+324
+5 5
+55555
+51115
+51915
+51115
+55555
+1 4
+5222
+1 5
+52222
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>Case #1: 0
+Case #2: 2
+Case #3: 3
+Case #4: 2
+Case #5: 3
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.facebook.com/hackercup/problems.php?pid=185328794823941&amp;round=173585106010813">View online</a>.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="polynomial_factoring.html">Polynomial Factoring</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="../round_2.html">Round 2</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

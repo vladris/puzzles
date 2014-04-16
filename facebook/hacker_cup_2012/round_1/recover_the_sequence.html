@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Round 1" href="../round_1.html" />
+    <link rel="next" title="Squished Status" href="squished_status.html" />
+    <link rel="prev" title="Checkpoint" href="checkpoint.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="checkpoint.html">Checkpoint</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="squished_status.html">Squished Status</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="recover-the-sequence">
+<h1>Recover the Sequence<a class="headerlink" href="#recover-the-sequence" title="Permalink to this headline">¶</a></h1>
+<p>Merge sort is one of the classic sorting algorithms. It divides the input array
+into two halves, recursively sorts each half, then merges the two sorted
+halves.</p>
+<p>In this problem merge sort is used to sort an array of integers in ascending
+order. The exact behavior is given by the following pseudo-code:</p>
+<div class="highlight-text"><div class="highlight"><pre>function merge_sort(arr):
+    n = arr.length()
+    if n &lt;= 1:
+        return arr
+
+    // arr is indexed 0 through n-1, inclusive
+    mid = floor(n/2)
+
+    first_half = merge_sort(arr[0..mid-1])
+    second_half = merge_sort(arr[mid..n-1])
+    return merge(first_half, second_half)
+
+function merge(arr1, arr2):
+    result = []
+    while arr1.length() &gt; 0 and arr2.length() &gt; 0:
+        if arr1[0] &lt; arr2[0]:
+            print &#39;1&#39; // for debugging
+            result.append(arr1[0])
+            arr1.remove_first()
+        else:
+            print &#39;2&#39; // for debugging
+            result.append(arr2[0])
+            arr2.remove_first()
+
+    result.append(arr1)
+    result.append(arr2)
+    return result
+</pre></div>
+</div>
+<p>A very important permutation of the integers 1 through <strong>N</strong> was lost to a hard
+drive failure. Luckily, that sequence had been sorted by the above algorithm
+and the debug sequence of 1s and 2s was recorded on a different disk. You will
+be given the length <strong>N</strong> of the original sequence, and the debug sequence.
+Recover the original sequence of integers.</p>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>The first line of the input file contains an integer <strong>T</strong>. This is followed by
+<strong>T</strong> test cases, each of which has two lines. The first line of each test case
+contains the length of the original sequence, <strong>N</strong>. The second line contains a
+string of 1s and 2s, the debug sequence produced by merge sort while sorting
+the original sequence. Lines are separated using Unix-style (&#8220;n&#8221;) line
+endings.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>To avoid having to upload the entire original sequence, output an integer
+checksum of the original sequence, calculated by the following algorithm:</p>
+<div class="highlight-text"><div class="highlight"><pre>function checksum(arr):
+    result = 1
+    for i=0 to arr.length()-1:
+        result = (31 * result + arr[i]) mod 1000003
+    return result
+</pre></div>
+</div>
+</div>
+<div class="section" id="constraints">
+<h2>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h2>
+<p>5 ≤ <strong>T</strong> ≤ 20</p>
+<p>2 ≤ <strong>N</strong> ≤ 10000</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>In the first example, N is 2 and the debug sequence is 1. The original sequence
+was 1 2 or 2 1. The debug sequence tells us that the first number was smaller
+than the second so we know the sequence was 1 2. The checksum is 994.</p>
+<p>In the second example, N is 2 and the debug sequence is 2. This time the
+original sequence is 2 1.</p>
+<p>In the third example, N is 4 and the debug sequence is 12212. The original
+sequence is 2 4 3 1.</p>
+</div>
+<div class="section" id="example-input">
+<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>5
+2
+1
+2
+2
+4
+12212
+5
+1122211
+10
+121221212111122121212
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>Case #1: 994
+Case #2: 1024
+Case #3: 987041
+Case #4: 570316
+Case #5: 940812
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.facebook.com/hackercup/problems.php?pid=287764834605024&amp;round=225705397509134">View online</a>.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="checkpoint.html">Checkpoint</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="squished_status.html">Squished Status</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

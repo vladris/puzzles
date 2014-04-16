@@ -1,0 +1,205 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Finals" href="../finals.html" />
+    <link rel="next" title="Facebook Hacker Cup 2012" href="../../hacker_cup_2012/hacker_cup_2012.html" />
+    <link rel="prev" title="Party Time" href="party_time.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="party_time.html">Party Time</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="../../hacker_cup_2012/hacker_cup_2012.html">Facebook Hacker Cup 2012</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="safest-place">
+<h1>Safest Place<a class="headerlink" href="#safest-place" title="Permalink to this headline">¶</a></h1>
+<p>While en route to the 295<sup>th</sup> annual Galactic Dance Party on Risa, you
+find yourself unceremoniously yanked out of hyperspace and, according to your
+sensors, surrounded by <strong>N</strong> space bombs. Apparently caught in a trap laid out
+by some dastardly and unknown enemy, and unable to return to hyperspace, you
+must find the safest place in the vicinity to weather the detonation of all the
+space bombs. Your unseen opponent has constructed a cube-shaped space anomaly
+that you are unable to leave, so your options are limited to points within that
+cube.</p>
+<p>Before the bombs explode (all simultaneously), you have just enough time to
+travel to any integer point in the cube [0, 0, 0]-[1000, 1000, 1000], both
+inclusive. You must find the point with the maximum distance to the nearest
+bomb, which your captain&#8217;s intuition tells you will be the safest point.</p>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>The first line of the input file consists of a single number <strong>T</strong>, the number
+of test cases. Each test consists of single number <strong>N</strong>, the number of bombs,
+followed by 3 * <strong>N</strong> integers describing the positions of the bombs.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>Output <strong>T</strong> integers, one per test case each on its own line, representing the
+square of distance to the nearest bomb from the safest point in the cube.</p>
+</div>
+<div class="section" id="constraints">
+<h2>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h2>
+<p><strong>T</strong> = 50</p>
+<p>1 &lt;= <strong>N</strong> &lt;= 200</p>
+<p>All bombs coordinates will be in [0, 1000], both inclusive.</p>
+</div>
+<div class="section" id="example-input">
+<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>5
+5
+0 0 0
+1000 1000 1000
+1000 500 0
+0 1000 500
+500 0 1000
+10
+0 0 0
+1000 1000 1000
+1000 500 0
+0 1000 500
+500 0 1000
+583 583 583
+1000 0 500
+500 1000 0
+0 500 1000
+625 0 0
+15
+0 0 0
+1000 1000 1000
+1000 500 0
+0 1000 500
+500 0 1000
+583 583 583
+1000 0 500
+500 1000 0
+0 500 1000
+625 0 0
+0 625 0
+0 0 625
+1000 1000 375
+1000 375 1000
+375 1000 1000
+20
+0 0 0
+1000 1000 1000
+1000 500 0
+0 1000 500
+500 0 1000
+583 583 583
+1000 0 500
+500 1000 0
+0 500 1000
+625 0 0
+0 625 0
+0 0 625
+1000 1000 375
+1000 375 1000
+375 1000 1000
+491 491 84
+491 84 491
+84 491 491
+1000 453 453
+453 1000 453
+25
+0 0 0
+1000 1000 1000
+1000 500 0
+0 1000 500
+500 0 1000
+583 583 583
+1000 0 500
+500 1000 0
+0 500 1000
+625 0 0
+0 625 0
+0 0 625
+1000 1000 375
+1000 375 1000
+375 1000 1000
+491 491 84
+491 84 491
+84 491 491
+1000 453 453
+453 1000 453
+453 453 1000
+891 891 0
+891 0 891
+0 891 891
+1000 109 109
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>Case #1: 520667
+Case #2: 390625
+Case #3: 265929
+Case #4: 207418
+Case #5: 164387
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.facebook.com/hackercup/problems.php?pid=164535313595986&amp;round=188859297819219">View online</a>.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="party_time.html">Party Time</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="../../hacker_cup_2012/hacker_cup_2012.html">Facebook Hacker Cup 2012</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

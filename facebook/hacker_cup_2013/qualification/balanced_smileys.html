@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Qualification Round" href="../qualification.html" />
+    <link rel="next" title="Find the Min" href="find_the_min.html" />
+    <link rel="prev" title="Beautiful strings" href="beautiful_strings.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="beautiful_strings.html">Beautiful strings</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="find_the_min.html">Find the Min</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="balanced-smileys">
+<h1>Balanced Smileys<a class="headerlink" href="#balanced-smileys" title="Permalink to this headline">¶</a></h1>
+<p>Your friend John uses a lot of emoticons when you talk to him on Messenger. In
+addition to being a person who likes to express himself through emoticons, he
+hates unbalanced parenthesis so much that it makes him go :(</p>
+<p>Sometimes he puts emoticons within parentheses, and you find it hard to tell if
+a parenthesis really is a parenthesis or part of an emoticon.</p>
+<p>A message has balanced parentheses if it consists of one of the following:</p>
+<ul class="simple">
+<li>An empty string &#8220;&#8221;</li>
+<li>One or more of the following characters: &#8216;a&#8217; to &#8216;z&#8217;, &#8216; &#8216; (a space) or &#8216;:&#8217; (a
+colon)</li>
+<li>An open parenthesis &#8216;(&#8216;, followed by a message with balanced parentheses,
+followed by a close parenthesis &#8216;)&#8217;.</li>
+<li>A message with balanced parentheses followed by another message with balanced
+parentheses.</li>
+<li>A smiley face &#8221;:)&#8221; or a frowny face &#8221;:(&#8220;</li>
+</ul>
+<p>Write a program that determines if there is a way to interpret his message
+while leaving the parentheses balanced.</p>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>The first line of the input contains a number <strong>T</strong> (1 ≤ <strong>T</strong> ≤ 50), the
+number of test cases.</p>
+<p>The following <strong>T</strong> lines each contain a message of length <strong>s</strong> that you got
+from John.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>For each of the test cases numbered in order from 1 to <strong>T</strong>, output &#8220;Case
+#i: &#8221; followed by a string stating whether or not it is possible that the
+message had balanced parentheses. If it is, the string should be &#8220;YES&#8221;, else it
+should be &#8220;NO&#8221; (all quotes for clarity only)</p>
+</div>
+<div class="section" id="constraints">
+<h2>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h2>
+<p>1 ≤ length of <strong>s</strong> ≤ 100</p>
+</div>
+<div class="section" id="example-input">
+<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>5
+:((
+i am sick today (:()
+(:)
+hacker cup: started :):)
+)(
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>Case #1: NO
+Case #2: YES
+Case #3: YES
+Case #4: YES
+Case #5: NO
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.facebook.com/hackercup/problems.php?pid=403525256396727&amp;round=185564241586420">View online</a>.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="beautiful_strings.html">Beautiful strings</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="find_the_min.html">Find the Min</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

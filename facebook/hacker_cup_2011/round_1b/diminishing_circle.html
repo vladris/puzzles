@@ -1,0 +1,126 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Round 1B" href="../round_1b.html" />
+    <link rel="next" title="Slot Machine Hacker" href="slot_machine_hacker.html" />
+    <link rel="prev" title="Chess 2" href="chess_2.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="chess_2.html">Chess 2</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="slot_machine_hacker.html">Slot Machine Hacker</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="diminishing-circle">
+<h1>Diminishing Circle<a class="headerlink" href="#diminishing-circle" title="Permalink to this headline">¶</a></h1>
+<p><strong>N</strong> people are standing in circle and play following game: they start with
+the first person, count <strong>K</strong> people clockwise, then the <strong>K</strong>+1-th person
+leaves the circle and the process starts all over, using the person clockwise
+of the last person removed as the starting point.</p>
+<p>For example when <strong>N</strong> = 9 and <strong>K</strong> = 3 people would leave in following
+order: 4, 8, 3, 9, 6, 5, 7, 2</p>
+<p>Given <strong>N</strong> and <strong>K</strong>, find who wins the game if counting starts with person 1.
+Person indices are 1-based.</p>
+<p>The last person who is left is declared the winner.</p>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>The input consists of a single integer <strong>T</strong>, the number of test cases. This is
+followed by <strong>T</strong> pairs of numbers <strong>N</strong> and <strong>K</strong>, all separated by whitespace.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>Print <strong>T</strong> whitespace-separated integers, the indices for each test case of
+the winner of the game.</p>
+</div>
+<div class="section" id="constraints">
+<h2>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h2>
+<p><strong>T</strong> = 20</p>
+<p>1 ≤ <strong>N</strong> ≤ 1012</p>
+<p>1 ≤ <strong>K</strong> ≤ 104</p>
+</div>
+<div class="section" id="example-input">
+<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>5
+9 3
+4 1
+3 2
+5 4
+6 9
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>Case #1: 1
+Case #2: 1
+Case #3: 2
+Case #4: 2
+Case #5: 2
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.facebook.com/hackercup/problems.php?pid=145264445532318&amp;round=167482453296629">View online</a>.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="chess_2.html">Chess 2</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="slot_machine_hacker.html">Slot Machine Hacker</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

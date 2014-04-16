@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Round 1A" href="../round_1a.html" />
+    <link rel="next" title="Test Round" href="../test_round.html" />
+    <link rel="prev" title="First or Last" href="first_or_last.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="first_or_last.html">First or Last</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="../test_round.html">Test Round</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="power-overwhelming">
+<h1>Power Overwhelming<a class="headerlink" href="#power-overwhelming" title="Permalink to this headline">¶</a></h1>
+<p>A lot of people at Facebook like to play Starcraft II™. Some of them have
+made a custom game using the Starcraft II™ map editor. In this game, you play
+as the noble Protoss defending your adopted homeworld of Shakuras from a
+massive Zerg army. You must do as much damage to the Zerg as possible before
+getting overwhelmed. You can only build two types of units, shield generators
+and warriors. Shield generators do no damage, but your army survives for one
+second per shield generator that you build. Warriors do one damage every
+second. Your army is instantly overrun after your shield generators expire.
+How many shield generators and how many warriors should you build to inflict
+the maximum amount of damage on the Zerg before your army is overrun? Because
+the Protoss value bravery, if there is more than one solution you should
+return the one that uses the most warriors.</p>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>The first line of the input is the number of test cases, <strong>N</strong>. The next <strong>N</strong>
+lines each contain a test case, which consists of three integers, <strong>G</strong>, <strong>W</strong>
+and <strong>M</strong>, each separated by a single space. <strong>G</strong> is the cost to build a
+shield generator. <strong>W</strong> is the cost to build a warrior. <strong>M</strong> is the total
+amount of money you have to build warriors and shield generators.</p>
+</div>
+<div class="section" id="constraints">
+<h2>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h2>
+<p>1 ≤ <strong>G</strong> ≤ 100</p>
+<p>1 ≤ <strong>W</strong> ≤ 100</p>
+<p><strong>G</strong> + <strong>W</strong> ≤ <strong>M</strong> ≤ 1000000000000 (10<sup>12</sup>)</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>For each test case, output a line containing a single integer <strong>G</strong>, the number
+of shield generators you choose to build.</p>
+</div>
+<div class="section" id="example-input">
+<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>5
+15 10 658931394179
+92 37 304080438521
+39 100 972826846685
+24 89 306549054135
+64 16 254854449271
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>Case #1: 21964393379
+Case #2: 1652611083
+Case #3: 12472102915
+Case #4: 6386403897
+Case #5: 1991050385
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.facebook.com/hackercup/problems.php?pid=187006817978553&amp;round=144428782277390">View online</a>.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="first_or_last.html">First or Last</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="../test_round.html">Test Round</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

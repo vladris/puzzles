@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Round 2" href="../round_2.html" />
+    <link rel="next" title="RoboElection" href="roboelection.html" />
+    <link rel="prev" title="Round 2" href="../round_2.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="../round_2.html">Round 2</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="roboelection.html">RoboElection</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="cake-cutting">
+<h1>Cake Cutting<a class="headerlink" href="#cake-cutting" title="Permalink to this headline">¶</a></h1>
+<p>&#8220;Happy birthday to you... Happy birthday to you... Happy birthday to Grovyle...
+Happy birthday to you...&#8221;</p>
+<p>Today is Grovyle&#8217;s birthday and he is going to invite his friends to his
+birthday party. To have an awesome party, each of the attendants should get one
+piece of cake. Your job is to help Grovyle invite as many friends as you can.</p>
+<p>However, Grovyle&#8217;s parents are very mean, and make him use the following rules
+when cutting his cake:</p>
+<ul class="simple">
+<li>There is only ONE cylindrical cake.</li>
+<li>Grovyle cuts the cake <strong>N</strong> times, each cut being perpendicular to the
+surface of the cake.</li>
+<li>The <strong>i</strong>-th cut is a broken line with <strong>a</strong>[<strong>i</strong>] vertices.</li>
+<li>The knife is only allowed to intersect the edge of the cylindrical cake at
+the start and end of the cut.</li>
+</ul>
+<p>What is the maximum number of pieces Grovyle could get?</p>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>The first line contains an integer <strong>T</strong>, <strong>T</strong> ≤ 50, indicating the number
+of test cases. Each test case begins with an integer <strong>N</strong>, 1 ≤ <strong>N</strong> ≤
+100, followed by <strong>N</strong> integers <strong>a</strong>[<strong>i</strong>], 0 ≤ <strong>a</strong>[<strong>i</strong>] &lt; 400,
+which indicate the number of vertices in the <strong>i</strong>-th cut.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>For each test case, output &#8220;Case #i: &#8221; followed by the maximum number of pieces
+of cake Grovyle can cut.</p>
+<img alt="../../../_images/example_1.jpg" src="../../../_images/example_1.jpg" />
+<p>Example for test case 1</p>
+<img alt="../../../_images/example_2.jpg" src="../../../_images/example_2.jpg" />
+<p>Example for test case 2</p>
+<img alt="../../../_images/example_3.jpg" src="../../../_images/example_3.jpg" />
+<p>Example for test case 3</p>
+</div>
+<div class="section" id="example-input">
+<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>5
+3 0 0 0
+2 1 1
+2 1 2
+4 0 0 0 1
+4 2 2 2 2
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>Case #1: 7
+Case #2: 7
+Case #3: 10
+Case #4: 14
+Case #5: 63
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.facebook.com/hackercup/problems.php?pid=500995316613418&amp;round=499927843385312">View online</a>.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="../round_2.html">Round 2</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="roboelection.html">RoboElection</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

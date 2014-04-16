@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Round 3" href="../round_3.html" />
+    <link rel="next" title="Facebook Hacker Cup 2013" href="../../hacker_cup_2013/hacker_cup_2013.html" />
+    <link rel="prev" title="Trapezoids" href="trapezoids.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="trapezoids.html">Trapezoids</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="../../hacker_cup_2013/hacker_cup_2013.html">Facebook Hacker Cup 2013</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="unfriending">
+<h1>Unfriending<a class="headerlink" href="#unfriending" title="Permalink to this headline">¶</a></h1>
+<p>It&#8217;s time to clean up your friends list after friending too many people on
+Facebook over the winter. The set of your friends&#8217; user ids is <strong>F</strong> = {
+<strong>x:sub:`0`</strong>, <strong>x:sub:`1`</strong>, ..., <strong>x:sub:`n-1`</strong>}. Each friend from
+<strong>F</strong> is on zero or more friend lists that you use to organize your friends.
+There are <strong>M</strong> friend lists, <strong>c:sub:`0`</strong>, <strong>c:sub:`1`</strong>, ...,
+<strong>c:sub:`m-1`</strong>. You can unfriend (remove from <strong>F</strong>) some of your friends,
+but because you want to stay in touch with people, you can only unfriend one
+person from each friend list. You may also choose not to unfriend anyone from
+friend list. Any friend that isn&#8217;t on a friend list cannot be unfriended.</p>
+<p>Your goal is to find the maximum possible distance between the two friends
+whose user ids are the closest after you are done unfriending people. The
+distance between user id <strong>x</strong> and user id <strong>y</strong> is defined as abs(<strong>x-y</strong>).</p>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>The first line contains a positive integer <strong>T</strong>, the number of test cases.
+<strong>T</strong> test cases follow.</p>
+<p>The first line of each test case contains the number of friends <strong>N</strong>, and
+number of friend lists <strong>M</strong>, separated by a space. The second line contains
+<strong>x:sub:`0`</strong> and integer parameters <strong>a</strong>, <strong>b</strong>, and <strong>p</strong>, separated by
+spaces. You must use these to generate the remaining numbers <strong>x:sub:`1`</strong>,
+…, <strong>x:sub:`n-1`</strong> according to this formula:</p>
+<blockquote>
+<div><strong>x:sub:`i`</strong> = (<strong>x:sub:`i-1`</strong> * <strong>a</strong> + <strong>b</strong>) mod <strong>p</strong></div></blockquote>
+<p>The next <strong>M</strong> lines of each test case define the friend lists for that test
+case. Each line consists of the following integers, separated by spaces:
+<strong>size</strong>, <strong>y:sub:`0`</strong>, <strong>a</strong>, <strong>b</strong>. The size is the number of friends in
+the friend list. <strong>y:sub:`0`</strong> is the index in F of the first friend in the
+list. You must generate the remaining friends in the friend list <strong>y:sub:`1`</strong>, …, <strong>y:sub:`n-1`</strong> according to the following formula:</p>
+<blockquote>
+<div><strong>y:sub:`i`</strong> = (<strong>y:sub:`i-1`</strong> * <strong>a</strong> + <strong>b</strong>) mod <strong>n</strong></div></blockquote>
+<p>If a friend list contains more than one of a given index, consider it to only
+contain that index once.</p>
+</div>
+<div class="section" id="constraints">
+<h2>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h2>
+<p>1 ≤ <strong>T</strong> ≤ 20</p>
+<p>2 ≤ <strong>n</strong> ≤ 50 000</p>
+<p>0 ≤ <strong>m</strong> ≤ 1 500</p>
+<p>0 ≤ sum of sizes of all friend lists ≤ 1 000 000</p>
+<p><strong>Numbers used in generators:</strong></p>
+<p>0 &lt; <strong>a</strong>, <strong>p</strong> &lt; 230
+0 ≤ <strong>b</strong> &lt; 230</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>For each of the test cases numbered in order from <strong>1</strong> to <strong>T</strong>, output &#8220;Case
+#&#8221;, followed by the case number, followed by &#8221;: &#8221;, followed by the maximum
+possible distance between the two closest user ids that you are still friends
+with for that case.</p>
+</div>
+<div class="section" id="example-input">
+<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>5
+9 2
+48071530 715583197 479567108 1050406
+2 6 743132951 85415827
+2 3 376850600 968665455
+
+11 3
+787260730 352556659 382266931 1057730
+2 9 734333632 693274928
+4 2 109921566 4305285
+2 6 677574083 984173544
+
+10 3
+395307869 893188066 853669149 1056195
+4 7 225271526 816658669
+4 0 131869161 339696459
+4 7 709635520 662395613
+
+12 3
+796525811 590453825 261103276 1050505
+3 9 594759110 714784928
+3 5 431449006 621243801
+3 10 638845242 279357772
+
+12 2
+609821186 802201942 33450613 1048819
+4 3 988115593 116841583
+4 0 327812052 590896542
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>Case #1: 7392
+Case #2: 5130
+Case #3: 15318
+Case #4: 63175
+Case #5: 5814
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.facebook.com/hackercup/problems.php?pid=277701708952729&amp;round=222291111185610">View online</a>.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="trapezoids.html">Trapezoids</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="../../hacker_cup_2013/hacker_cup_2013.html">Facebook Hacker Cup 2013</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

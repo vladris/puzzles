@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Round 2" href="../round_2.html" />
+    <link rel="next" title="Permutations" href="permutations.html" />
+    <link rel="prev" title="Cake Cutting" href="cake_cutting.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="cake_cutting.html">Cake Cutting</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="permutations.html">Permutations</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="roboelection">
+<h1>RoboElection<a class="headerlink" href="#roboelection" title="Permalink to this headline">¶</a></h1>
+<p>In the not so distant future the world is populated by robots and ruled by an
+evil robot emperor. Every robot in the world can be identified by a unique
+numeric ID, and the list of all the existing robot IDs is easily accessible to
+everyone. One day the emperor decided to call for a general election to
+preserve an illusion of democracy. He set it up in the following way:</p>
+<ul class="simple">
+<li>Every robot can cast at most one vote per round of voting and the votes are
+anonymous.</li>
+<li>The only option on the ballot is the vote for reelection of the emperor.</li>
+<li>If at least P percent of the population cast votes for the emperor he becomes
+reelected for the next millennium.</li>
+<li>Otherwise the emperor declares the vote void, disassembles <strong>K</strong> robots with
+the lowest ID numbers (who he finds to be the most rebellious), and then if
+there are any functional robots left he restarts the whole process.</li>
+</ul>
+<p>All the robots are perfectly logical but also rather lazy and prone to
+procrastination. That&#8217;s why after figuring out the plan of the emperor, they
+will abstain from voting unless they have to vote to survive the election
+(including this round and all later rounds). If they will die whether or not
+they vote, they will vote in the hope that the emperor will spare them. (He
+won&#8217;t, because he&#8217;s evil!).</p>
+<div class="section" id="problem">
+<h2>Problem<a class="headerlink" href="#problem" title="Permalink to this headline">¶</a></h2>
+<p>Given <strong>N</strong> - the initial population size, <strong>K</strong> - the number of robots
+disassembled after an unsuccessful vote and <strong>P</strong> - the required percentage
+of votes.</p>
+<p>Compute the number of times the vote will take place.</p>
+</div>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>The first line contains the number of test cases <strong>T</strong>, where <strong>1 ≤ T
+≤ 100</strong></p>
+<p>Each case is a single line with three space-separated integers <strong>N</strong> <strong>K</strong>
+<strong>P</strong></p>
+<p>0 &lt; <strong>K</strong> ≤ <strong>N</strong> ≤ 1&#8216;000&#8216;000&#8216;000&#8216;000; 0 &lt; <strong>P</strong> ≤ 100</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>For test case <strong>i</strong>, numbered from <strong>1</strong> to <strong>T</strong>, output &#8220;Case #i: &#8221;, followed
+by a single integer, the number of times the emperor will have to call a vote
+before getting reelected.</p>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>In the first case we have three robots. Two of them are facing disassembly, so
+they will vote for the emperor. The third robot will survive even if he
+abstains in the first round, so he doesn&#8217;t vote. But two out of three is not
+enough to reach the 75% minimum, so the election proceeds to a second round.
+The election ends when the single remaining robot casts a vote for the emperor.</p>
+<p>In the second case again two robots are in immediate danger, but the next two
+robots are forced to vote as well, otherwise they would end up in the same
+situation as in the first example case. Now with the 4 out of 5 casting the
+vote the election successfully ends.</p>
+</div>
+<div class="section" id="example-input">
+<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>5
+3 2 75
+5 2 75
+75 8 20
+30 15 10
+1234 7 44
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>Case #1: 2
+Case #2: 1
+Case #3: 2
+Case #4: 1
+Case #5: 60
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.facebook.com/hackercup/problems.php?pid=203848133093543&amp;round=499927843385312">View online</a>.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="cake_cutting.html">Cake Cutting</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="permutations.html">Permutations</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

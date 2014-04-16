@@ -1,0 +1,216 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Round 1B" href="../round_1b.html" />
+    <link rel="next" title="Diminishing Circle" href="diminishing_circle.html" />
+    <link rel="prev" title="Round 1B" href="../round_1b.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="../round_1b.html">Round 1B</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="diminishing_circle.html">Diminishing Circle</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="chess-2">
+<h1>Chess 2<a class="headerlink" href="#chess-2" title="Permalink to this headline">¶</a></h1>
+<p>After decades of shadowy demonstrations and delays from the game’s maker,
+Chess 2 has finally been released. You waited in line all night to be one of
+the first to purchase an example of the hot sequel to the classic original, and
+now you are finally getting a chance to open up your new investment and take a
+look inside. What you find is slightly puzzling; in addition to the traditional
+pieces, the game has been expanded to contain a number of pieces that are not
+actually original.</p>
+<p>The best-known piece that has been added to the game is the nightrider. The
+nightrider can make any number of knight moves in a single direction, i.e., its
+offset from its initial position will be 2*<strong>m</strong> in one dimension and <strong>m</strong>
+in the other for some nonzero integer <strong>m</strong>. Like other &#8220;sliding&#8221; pieces, if
+one of the knight moves would cause it to take another piece it is not able to
+traverse beyond that point</p>
+<p>The archbishop is also part of Chess 2. The archbishop can simply make any move
+that a knight or bishop could legally make.</p>
+<p>The strangest new piece is the kraken. The kraken can move to any square on the
+board, regardless of the position of any other pieces, including its own
+current position.</p>
+<p>You don&#8217;t feel like reading the manual to learn about how the new pieces fit
+into the standard chess opening positions, so instead you place some of the
+pieces randomly on the board. The game you’ve decided to play is simply to
+count how many pieces on the board are currently being threatened. A piece is
+threatened if another piece is able to move into its cell and take it (note
+that if the kraken moves into its own cell it does not take itself).</p>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>Your input file will consist of a single integer <strong>N</strong> followed by <strong>N</strong> test
+cases. Each case will consist of, all separated by whitespace, an integer <strong>P</strong>
+followed by the identities and positions of <strong>P</strong> Chess 2 pieces. Pieces are
+described by a single character <strong>C</strong> to denote their type (see specification
+below) followed by two integers <strong>R</strong> and <strong>F</strong>, the 1-based rank and file,
+respectively, of the piece.</p>
+<p>You&#8217;ve decided to ignore the colors of the pieces in this game. The color of
+the pieces will not be reflected in the input and so cannot affect your output.</p>
+<p>To make room for the new pieces, the Chess 2 board is a 16 by 16 grid. No
+specified pieces will fall outside the board, and no two pieces will occupy the
+same position.</p>
+<p>The types of pieces will be specified as follows, and no entries not present in
+this table will appear on the board:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="45%" />
+<col width="55%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Piece</th>
+<th class="head">Abbreviation</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>King</td>
+<td>K</td>
+</tr>
+<tr class="row-odd"><td>Queen</td>
+<td>Q</td>
+</tr>
+<tr class="row-even"><td>Rook</td>
+<td>R</td>
+</tr>
+<tr class="row-odd"><td>Bishop</td>
+<td>B</td>
+</tr>
+<tr class="row-even"><td>Knight</td>
+<td>N</td>
+</tr>
+<tr class="row-odd"><td>Nightrider</td>
+<td>S</td>
+</tr>
+<tr class="row-even"><td>Archbishop</td>
+<td>A</td>
+</tr>
+<tr class="row-odd"><td>Kraken</td>
+<td>E</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>Output a single integer, the number of threatened pieces on the board, for each
+test case separated by whitespace.</p>
+</div>
+<div class="section" id="constraints">
+<h2>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h2>
+<p><strong>N</strong> = 20</p>
+<p>3 &lt;= <strong>P</strong> &lt;= 64</p>
+<p>1 &lt;= <strong>R</strong>, <strong>F</strong> &lt;= 16</p>
+<p><strong>C</strong> will be one of K, Q, R, B, N, S, A or E</p>
+</div>
+<div class="section" id="example-input">
+<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>5
+4
+Q 1 1
+B 3 1
+B 5 1
+B 1 4
+
+3
+S 1 1
+K 2 3
+S 3 5
+
+4
+N 1 1
+B 3 3
+Q 5 5
+N 4 1
+
+5
+R 2 2
+N 1 2
+N 2 1
+N 16 2
+N 2 16
+
+6
+Q 1 1
+Q 2 3
+Q 3 5
+Q 4 2
+Q 5 4
+E 1 5
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>Case #1: 2
+Case #2: 1
+Case #3: 3
+Case #4: 4
+Case #5: 6
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.facebook.com/hackercup/problems.php?pid=144772812246562&amp;round=167482453296629">View online</a>.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="../round_1b.html">Round 1B</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="diminishing_circle.html">Diminishing Circle</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

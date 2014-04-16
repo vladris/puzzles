@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Buffet Difficulty Puzzles" href="../buffet.html" />
+    <link rel="next" title="Facebook Hacker Cup 2011" href="../../hacker_cup_2011/hacker_cup_2011.html" />
+    <link rel="prev" title="FaceBull" href="facebull.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="facebull.html">FaceBull</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="../../hacker_cup_2011/hacker_cup_2011.html">Facebook Hacker Cup 2011</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="find-sophie">
+<h1>Find Sophie<a class="headerlink" href="#find-sophie" title="Permalink to this headline">¶</a></h1>
+<p>After a long day of coding, you love to head home and relax with a loved one.
+Since that whole relationship thing hasn&#8217;t been working out for you recently,
+that loved one will have to be your cat, Sophie. Unfortunately you find
+yourself spending considerable time after you arrive home just trying to find
+her. Being a perfectionist and unable to let anything suboptimal be a part of
+your daily life, you decide to devise the most efficient possible method for
+finding Sophie.</p>
+<p>Luckily for you, Sophie is a creature of habit. You know where all of her
+hiding places are, as well as the probability of her hiding in each one. You
+also know how long it takes you to walk from hiding place to hiding place.
+Write a program to determine the minimum expected time it will take to find
+Sophie in your apartment. It is sufficient to simply visit a location to check
+if Sophie is hiding there; no time must be spent looking for her at a
+location. Sophie is hiding when you enter your apartment, and then will not
+leave that hiding place until you find her. Your program must take the name of
+an input file as an argument on the command line.</p>
+<div class="section" id="input-specifications">
+<h2>Input Specifications<a class="headerlink" href="#input-specifications" title="Permalink to this headline">¶</a></h2>
+<p>The input file starts with a single number, m, followed by a newline. m is the
+number of locations available for Sophie to hide in your apartment. This line
+is followed by m lines, each containing information for a single location of
+the form (brackets for clarity):</p>
+<div class="highlight-text"><div class="highlight"><pre>&lt;location name&gt; &lt;probability&gt;
+</pre></div>
+</div>
+<p>probability is the probability that Sophie is hiding in the location indicated.
+The sum of all the probabilities is always 1. The contents of these lines are
+separated by whitespace. Names will only contain alphanumeric characters and
+underscores (&#8216;_&#8217;), and there will be no duplicate names. All input is
+guaranteed to be well-formed. Your starting point is the first location to be
+listed, and in effect it costs you no time to check if Sophie is there.</p>
+<p>The file continues with a single number, c, followed by a newline. c is the
+number of connections that exist between the various locations. This line is
+followed by c lines, each of the form:</p>
+<div class="highlight-text"><div class="highlight"><pre>&lt;location name&gt; &lt;location name&gt; &lt;seconds&gt;
+</pre></div>
+</div>
+<p>The first two entries are the names of locations and seconds is the number of
+seconds it takes you to walk between the them. Again these lines are
+whitespace-delimited. Note that the locations are unordered; you can walk
+between them in either direction and it will take the same amount of time. No
+duplicate pairs will be included in the input file, and all location names will
+match one described earlier in the file.</p>
+<p>Example input file:</p>
+<div class="highlight-text"><div class="highlight"><pre>4
+front_door .2
+in_cabinet .3
+under_bed .4
+behind_blinds .1
+5
+front_door under_bed 5
+under_bed behind_blinds 9
+front_door behind_blinds 5
+front_door in_cabinet 2
+in_cabinet behind_blinds 6
+</pre></div>
+</div>
+</div>
+<div class="section" id="output-specifications">
+<h2>Output Specifications<a class="headerlink" href="#output-specifications" title="Permalink to this headline">¶</a></h2>
+<p>Your output must consist of a single number followed by a newline, printed to
+standard out. The number is the minimum expected time in seconds it takes to
+find Sophie, rounded to the nearest hundredth. Make sure that the number
+printed has exactly two digits after the decimal point (even if they are
+zeroes). If it is impossible to guarantee that you will find Sophie, print
+&#8220;-1.00&#8221; followed by a newline instead.</p>
+<p>Example output:</p>
+<div class="highlight-text"><div class="highlight"><pre>6.00
+</pre></div>
+</div>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="facebull.html">FaceBull</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="../../hacker_cup_2011/hacker_cup_2011.html">Facebook Hacker Cup 2011</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Round 3" href="../round_3.html" />
+    <link rel="next" title="Name the Baby" href="name_the_baby.html" />
+    <link rel="prev" title="Round 3" href="../round_3.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="../round_3.html">Round 3</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="name_the_baby.html">Name the Baby</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="digits-war">
+<h1>Digits War<a class="headerlink" href="#digits-war" title="Permalink to this headline">¶</a></h1>
+<p>There has been a war between the digits in the kingdom of numbers and it is
+King Infinity&#8217;s job to restore balance. In search of peace he came up with a
+new number system which only allows those numbers to exist in which:</p>
+<ol class="arabic simple">
+<li>None of the consecutive digits are at war against each other.</li>
+<li>No two digits that have only one digit in between them are at war.</li>
+</ol>
+<p>For example, if 4 is at war with 5, then 45, 405, and 574 are all forbidden.</p>
+<p>A digit can be at war with itself. You are given a 10 x 10 binary matrix <strong>M</strong>
+(0 index based), where <strong>M</strong>[i][j] denotes whether there is a war between
+digit i and digit j. If <strong>M</strong>[i][j] = 1 then they are at war and <strong>M</strong>
+[i][j] = 0 means they are not. <strong>M</strong>[i][j] will always be equal to <strong>M</strong>
+[j][i].</p>
+<p>Your task is to find the count of positive numbers that can exist in this
+number system with number of digits ≤ <strong>K</strong>. No number in the number system
+can have leading zeroes.</p>
+<div class="section" id="limits">
+<h2>Limits<a class="headerlink" href="#limits" title="Permalink to this headline">¶</a></h2>
+<p>1 ≤ <strong>K</strong> ≤ 10<sup>18</sup></p>
+</div>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>Input consists of <strong>T</strong> test cases, with <strong>T</strong> ≤ 25. Each test case begins
+with the value of <strong>K</strong> followed by a 10x10 binary matrix.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>For every test case output the result modulo 10<sup>9</sup> +7</p>
+</div>
+<div class="section" id="example-input">
+<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>5
+4
+0 1 1 0 0 1 1 1 1 1
+1 0 0 1 0 0 0 1 1 1
+1 0 0 1 1 1 0 1 0 1
+0 1 1 1 1 0 0 0 0 1
+0 0 1 1 0 1 1 0 1 0
+1 0 1 0 1 0 1 1 0 1
+1 0 0 0 1 1 1 0 0 0
+1 1 1 0 0 1 0 1 0 1
+1 1 0 0 1 0 0 0 0 1
+1 1 1 1 0 1 0 1 1 0
+1
+1 0 1 0 1 0 1 0 0 1
+0 0 1 1 0 1 0 1 0 1
+1 1 0 0 0 0 1 0 1 0
+0 1 0 0 1 0 0 1 1 1
+1 0 0 1 1 1 1 1 0 0
+0 1 0 0 1 1 1 0 0 1
+1 0 1 0 1 1 0 1 0 0
+0 1 0 1 1 0 1 0 0 1
+0 0 1 1 0 0 0 0 1 0
+1 1 0 1 0 1 0 1 0 0
+5
+0 1 0 0 1 1 0 0 1 1
+1 1 0 0 1 1 0 0 0 0
+0 0 0 0 1 1 0 0 1 1
+0 0 0 0 1 1 0 0 1 0
+1 1 1 1 0 0 0 1 0 0
+1 1 1 1 0 1 0 0 1 0
+0 0 0 0 0 0 0 0 1 1
+0 0 0 0 1 0 0 0 1 1
+1 0 1 1 0 1 1 1 0 1
+1 0 1 0 0 0 1 1 1 1
+2
+0 1 1 1 0 1 1 1 1 1
+1 1 1 1 1 1 0 0 0 0
+1 1 1 0 0 0 1 1 1 1
+1 1 0 0 0 1 0 1 1 0
+0 1 0 0 0 0 1 0 0 0
+1 1 0 1 0 0 0 1 1 0
+1 0 1 0 1 0 0 0 0 0
+1 0 1 1 0 1 0 1 0 0
+1 0 1 1 0 1 0 0 0 0
+1 0 1 0 0 0 0 0 0 0
+3
+1 0 0 0 1 1 1 0 1 1
+0 1 0 0 1 1 0 0 1 1
+0 0 0 1 0 0 0 1 0 0
+0 0 1 1 0 0 0 1 0 1
+1 1 0 0 0 1 1 1 0 0
+1 1 0 0 1 0 0 1 1 1
+1 0 0 0 1 0 0 1 1 0
+0 0 1 1 1 1 1 1 1 0
+1 1 0 0 0 1 1 1 1 1
+1 1 0 1 0 1 0 0 1 0
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>Case #1: 517
+Case #2: 9
+Case #3: 6510
+Case #4: 60
+Case #5: 187
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.facebook.com/hackercup/problems.php?pid=141185906040057&amp;round=402976459784646">View online</a>.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="../round_3.html">Round 3</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="name_the_baby.html">Name the Baby</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

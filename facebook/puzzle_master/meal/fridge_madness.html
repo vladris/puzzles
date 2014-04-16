@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Meal Difficulty Puzzles" href="../meal.html" />
+    <link rel="next" title="Peak Traffic" href="peak_traffic.html" />
+    <link rel="prev" title="Meal Difficulty Puzzles" href="../meal.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="../meal.html">Meal Difficulty Puzzles</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="peak_traffic.html">Peak Traffic</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="refrigerator-madness">
+<h1>Refrigerator Madness<a class="headerlink" href="#refrigerator-madness" title="Permalink to this headline">¶</a></h1>
+<p>Facebook is always looking for ways to make its engineers happier and work
+faster. The free food and drinks at Facebook have revealed a surprising
+empirical fact: the drinks an engineer prefers determines who they are best at
+working with. In an attempt to capitalize on this fact, Facebook is
+implementing extreme programming in its engineers as a way to maximize
+productivity.</p>
+<p>As a growing company, Facebook has many engineers and determining the assignment
+can no longer be done by hand. By analyzing a list of available drinks in the
+refrigerator, and a table of employee drink preferences, you wish to provide
+the company with the arrangement that benefits everyone the most with happy and
+productive engineers. Being an engineer of some repute, you realize this is
+best done with a clever program.</p>
+<div class="section" id="input-specifications">
+<h2>Input specifications<a class="headerlink" href="#input-specifications" title="Permalink to this headline">¶</a></h2>
+<p>The input file consists of a multi-line file that is divided into three
+sections. The first line of the file contains two positive integers separated
+by a single space character. These two numbers are the number of engineers in
+the file, and the number of drinks defined by the file (in that order). The
+number of engineers in the company will always be even.</p>
+<p>Following that line are a number of lines defining the drinks available at
+Facebook. These drink lines start with a unique integer drink id, followed by a
+variable amount of white space (spaces and/or tabs), followed by string
+representing the human readable name of the drink. All drink lines end with a
+single new line. Drink ids start at 0 and increment by 1 for each new drink.</p>
+<p>Following the drink definitions, are a number of lines declaring engineers and
+their drink preferences. Each engineer line starts with a unique engineer id,
+followed by a variable amount of white space (spaces and/or tabs), followed by
+a comma separated list of drink ids. All engineer lines end with a single new
+line. Engineer ids start at 0 and increment by 1 for each new engineer.</p>
+<p>Every engineer&#8217;s drink list will contain the N most preferred drinks for that
+engineer where N is less than or equal to the total number of drinks defined by
+the input file. The drink lists are ordered, with the first drink listed being
+the most preferred by the engineer, and so on.</p>
+<p>Example input file:</p>
+<div class="highlight-text"><div class="highlight"><pre>6 3
+0       Black Coffee
+1       Green Tea
+2       Gatorade
+0       0,2,1
+1       1,2,0
+2       2,1,0
+3       1,0,2
+4       2,0,1
+5       0,1,2
+</pre></div>
+</div>
+<p>You are guaranteed that your program will run against well-formed input files,
+and that the number of drink definitions, and engineer definitions, will match
+the summary provided in the first line of the input file.</p>
+</div>
+<div class="section" id="output-specifications">
+<h2>Output specifications<a class="headerlink" href="#output-specifications" title="Permalink to this headline">¶</a></h2>
+<p>To maximize the effectiveness, Facebook wants the engineers from its upper 50th
+percentile to only be assigned with engineers from its lower 50th percentile.
+To assist in this, Facebook has sorted its employee ids so that employee 0 is
+the most effective engineer, and progressing down to the last employee who is
+the least effective engineer.</p>
+<p>An engineer&#8217;s preference to work with another engineer can be calculated by
+comparing the drink preferences of each engineer. An engineer prefers to work
+with one engineer over another if the preference score is higher. For example,
+if engineer A prefers engineer B with a preference score of 100 and engineer C
+with a preference score of 200, then engineer A prefers to work with C compared
+to engineer B. Preferences are one-directional, and just because engineer A
+prefers engineer C does not mean that C shares the exact same preference to
+work with A.</p>
+<p>To calculate how much an engineer A prefers to work with another engineer B,
+calculate a value for every drink in A&#8217;s list and sum the total.</p>
+<p>If there are N drinks in an A&#8217;s drink list, the first (and most) preferred drink
+has a base value of N points, the second drink is worth N-1 points, and so on
+until the last drink, which has a base value of 1 point.</p>
+<p>If both A and B have the same drink in their list, and it is in the same
+position in both lists, square the base value for this drink because these two
+engineers have so much more in common.</p>
+<p>Otherwise, if A likes a drink more (e.g. the drink appears sooner in A&#8217;s list or
+does not appear at all in B&#8217;s list), only use the base value of the drink,
+because at least A may be able to convince B of the merits of the drink in
+question.</p>
+<p>If B happens to like the drink more than A (e.g. the drink appears sooner in B&#8217;s
+list), ignore the base value and add nothing to the sum. In this case, A is
+distrustful and dubious of B&#8217;s taste in liquid refreshment.</p>
+<p>If this is done for every drink in A&#8217;s list, the sum is the total preference
+level which with A prefers to work with engineer B. Ties in preference levels
+are settled with engineers always preferring less effective engineers over more
+effective engineers. This is because good engineers enjoy helping other
+engineers, and lesser engineers enjoy hanging out with engineers that are more
+like them.</p>
+<p>Your program must pair up every engineer from the upper 50th percentile with an
+engineer from the lower 50th percentile such that there are no two engineers in
+both sets that would prefer each other over their current assignment. To keep
+the upper 50th percentile engineers happy, they must be assigned to the highest
+possible preferred lower 50th percentile engineer while still maintaining the
+above condition. Your output must contain newline-separated pairs of engineer
+ids, where the contents of each pair are in ascending order and separated by a
+single space. The pairs must appear in the output in ascending order of the
+first id they contain.</p>
+<p>Example output (newline at end of every file):</p>
+<div class="highlight-text"><div class="highlight"><pre>0 5
+1 3
+2 4
+</pre></div>
+</div>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="../meal.html">Meal Difficulty Puzzles</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="peak_traffic.html">Peak Traffic</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

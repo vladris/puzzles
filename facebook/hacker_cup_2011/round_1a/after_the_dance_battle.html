@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Round 1A" href="../round_1a.html" />
+    <link rel="next" title="First or Last" href="first_or_last.html" />
+    <link rel="prev" title="Round 1A" href="../round_1a.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="../round_1a.html">Round 1A</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="first_or_last.html">First or Last</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="after-the-dance-battle">
+<h1>After the Dance Battle<a class="headerlink" href="#after-the-dance-battle" title="Permalink to this headline">¶</a></h1>
+<p>Walking home in triumph after a particularly satisfying dance battle, you take
+a wrong turn into an alley and find yourself presented with a perplexing
+puzzle. The entrance to the alley behind you disappears and you are faced with
+a rectangular grid of colorful squares, with thick granite walls occupying some
+of the squares. The grid is recessed far enough into the ground that, from
+above, you can see the exit in the distance and the layout of all the colors.
+You can memorize the entire layout before entering the grid and trying to make
+your way across.</p>
+<p>As you stand above the grid trying to commit its layout to memory, you notice
+something strange about the urban wildlife trapped with you in the maze; the
+various fauna seem to be able to move almost instantaneously between squares of
+the same color. You suspect that you can use this property to your advantage,
+which you attempt to keep at the front of your mind as you enter the labyrinth
+with your intentions set on getting out as quickly as possible.</p>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>Your input file will consist of a number <strong>N</strong> followed by some whitespace and
+then <strong>N</strong> test cases. Each case consists of two numbers <strong>R</strong> and <strong>C</strong>, the
+number of rows and columns in the maze, followed by <strong>R</strong> strings describing
+the layout of the rows in order. All tokens are whitespace-separated.</p>
+<p>Each element describing a row will consist of the characters &#8216;S&#8217;, &#8216;E&#8217;, &#8216;W&#8217;, or
+the digits 0-9. There will be only one &#8216;S&#8217; square and one &#8216;E&#8217; square, &#8216;S&#8217; being
+your starting point and &#8216;E&#8217; being the exit. &#8216;S&#8217; will be in the first row, &#8216;E&#8217;
+will be in the last row. &#8216;W&#8217; squares are occupied by walls, and cannot be
+entered. Digits 1-9 represent the colors of the squares. You can pass in a
+single step between adjacent squares or between any two squares of the same
+color. The start and exit points as well as all &#8216;0&#8217; squares are inert, i.e.,
+they have no color and must be stepped directly on to or off of. There will
+always be some valid method of reaching the exit.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>Return the number of steps required to reach the exit from the starting point.</p>
+</div>
+<div class="section" id="constraints">
+<h2>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h2>
+<p>10 &lt;= <strong>N</strong> &lt;= 50</p>
+<p>2 &lt;= <strong>R</strong>, <strong>C</strong> &lt;= 100</p>
+</div>
+<div class="section" id="example-input">
+<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>5
+5 3
+00S
+02W
+009
+W50
+E0W
+
+10 6
+000S0W
+00000W
+000WW0
+000WWW
+W0400W
+0000WW
+0300WW
+W000WW
+0000WW
+WE0000
+
+15 9
+00W0000S0
+0000W0000
+0WW000000
+00W000000
+000050000
+000080005
+050000000
+000000000
+W0W00W000
+00WW0WW00
+WWWW00000
+0W0090500
+WWW0W0000
+WW00WW000
+0W0WWE000
+
+20 12
+40000000S00W
+000000000000
+03000000000W
+100000008000
+000000000000
+000000700000
+000000000700
+000000000000
+070000000000
+000000002070
+000100000000
+000000000430
+000000000000
+000004004000
+350000000000
+W02010000030
+W10000000000
+000100000300
+000009000000
+0E0000005000
+
+25 15
+0WS00W0W600WWW0
+0W6W00WWW0WW0W0
+WW0W00W0WW0WWWW
+W0WW04WWWW0WW0W
+WW0W0000WWWWWW0
+000WWW000WWW9W0
+W0WWWW00000WWW0
+0WWW0WW0W00WW90
+WWW000WW0000WWW
+W0W000WW0000WWW
+0W0800WW0W00000
+W000W0W4WW00WWW
+000000WW00000WW
+W000030000304W0
+W00000W0000000W
+W08000000000000
+WW00WW00W0W0400
+000W0W00300W050
+00WWWWWW0WWWW40
+00WWWWWWWW00WW0
+00WW0000W000WW0
+000000000000WWW
+W602000000W05W0
+090000000000W0W
+WWWWWW000000EW0
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>Case #1: 6
+Case #2: 11
+Case #3: 11
+Case #4: 15
+Case #5: 13
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.facebook.com/hackercup/problems.php?pid=182391281781511&amp;round=144428782277390">View online</a>.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="../round_1a.html">Round 1A</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="first_or_last.html">First or Last</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

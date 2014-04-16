@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Round 1C" href="../round_1c.html" />
+    <link rel="next" title="Risky Slide" href="risky_slide.html" />
+    <link rel="prev" title="N-Factorful" href="n-factorful.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="n-factorful.html">N-Factorful</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="risky_slide.html">Risky Slide</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="polynomial-factoring">
+<h1>Polynomial Factoring<a class="headerlink" href="#polynomial-factoring" title="Permalink to this headline">¶</a></h1>
+<p>A polynomial in x of degree <strong>D</strong> can be written as:</p>
+<p>a<sub>D</sub>x<sup>D</sup> + a<sub>D-1</sub>x<sup>D-1</sup> + ... + a<sub>1</sub>x<sup>1</sup> + a<sub>0</sub></p>
+<p>In some cases, a polynomial of degree D can also be written as the product of
+two polynomials of degrees D<sub>1</sub> and D<sub>2</sub>, where D = D<sub>1</sub>
++ D<sub>2</sub>. For instance,</p>
+<p>4 x<sup>2</sup> + 11 x<sup>1</sup> + 6 = (4 x<sup>1</sup> + 3) * (1 x<sup>1</sup> + 2)</p>
+<p>In this problem, you will be given two polynomials, denoted <strong>F</strong> and <strong>G</strong>.
+Your task is to find a polynomial <strong>H</strong> such that <strong>G</strong> * <strong>H</strong> = <strong>F</strong>, and
+each ai is an integer.</p>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>You should first read an integer <strong>N</strong> ≤ 60, the number of test cases. Each
+test case will start by describing <strong>F</strong> and then describe <strong>G</strong>. Each
+polynomial will start with its degree 0 ≤ D ≤ 20, which will be followed by
+D+1 integers, denoting a<sub>0</sub>, a<sub>1</sub>, ... , a<sub>D</sub>, where
+-10000 ≤ a<sub>i</sub> ≤ 10000. Each polynomial will have a non-zero
+coefficient for it&#8217;s highest order term.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>For each test case, output a single line describing <strong>H</strong>. If <strong>H</strong> has degree
+D<sub>H</sub>, you should output a line containing D<sub>H</sub> + 1 integers,
+starting with a<sub>0</sub> for <strong>H</strong>. If no <strong>H</strong> exists such that
+<strong>G</strong> * <strong>H</strong> = <strong>F</strong>, you should output &#8220;no solution&#8221;.</p>
+</div>
+<div class="section" id="example-input">
+<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>5
+2 6 11 4
+1 3 4
+2 1 2 1
+1 1 1
+2 1 0 -1
+1 1 1
+1 1 1
+2 1 2 1
+5 1 1 1 1 1 1
+3 1 1 1 1
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>Case #1: 2 1
+Case #2: 1 1
+Case #3: 1 -1
+Case #4: no solution
+Case #5: no solution
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.facebook.com/hackercup/problems.php?pid=157714037613443&amp;round=173585106010813">View online</a>.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="n-factorful.html">N-Factorful</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="risky_slide.html">Risky Slide</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

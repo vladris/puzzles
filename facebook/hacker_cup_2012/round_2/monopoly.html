@@ -1,0 +1,173 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Round 2" href="../round_2.html" />
+    <link rel="next" title="Road Removal" href="road_removal.html" />
+    <link rel="prev" title="Round 2" href="../round_2.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="../round_2.html">Round 2</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="road_removal.html">Road Removal</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="monopoly">
+<h1>Monopoly<a class="headerlink" href="#monopoly" title="Permalink to this headline">¶</a></h1>
+<p>In a certain business sector there are currently N small companies, each having
+just a single employee. These employees are numbered 1 through N.</p>
+<p>The business sector is about to be transformed into a monopoly. This will
+happen through a series of mergers, until there is only one company. A single
+merger involves two companies. In a merger, the president of one company
+becomes the direct report of the president of the other company, preserving the
+rest of the hierarchies of both companies.</p>
+<p>You will be given the descriptions of all mergers. Depending on how they are
+performed (which of the two presidents involved becomes the president of the
+new company), the hierarchy can of the final company can take different
+shapes. We want the hierarchy of the final company to be as shallow as
+possible. The task is to find the smallest possible number of levels in the
+final hierarchy.</p>
+<p>There is also a limit D on the number of direct reports any employee can have.
+Because of this limit, there may be only one way to accomplish a certain
+merger, or it might even be impossible. However, there will always be some way
+to accomplish all the mergers.</p>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>The first line contains the number of test cases T.</p>
+<p>Each test case starts with a blank line. The next line contains two integers,
+N and D.</p>
+<p>Each of the following N-1 lines describes a single merger, with two integers
+between 1 and N. These are the employees whose companies are merging. The two
+employees will never already be part of the same company.</p>
+<p>The mergers must be performed in the order in which they are given.</p>
+</div>
+<div class="section" id="constraints">
+<h2>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h2>
+<p>5 ≤ T ≤ 20</p>
+<p>2 ≤ N ≤ 30000</p>
+<p>1 ≤ D ≤ 5000</p>
+<p>The input test cases will be such that it is possible to accomplish all
+mergers.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>For each of the test cases numbered in order from 1 to T, output &#8220;Case #i: &#8221;
+followed by a single integer, the smallest number of levels in the final
+hierarchy.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>In the first example, we have N=3 and D=2. The first merger happens between the
+companies of employees 1 and 2. In the resulting company we can have employee 1
+as the president with 2 as his report, or vice versa. Next this company merges
+with the company of employee 3. If we have employee 3 become the president, the
+hierarchy will be a chain 3-1-2 or 3-2-1. If 1 or 2 become the president, that
+president will have the other two employees as direct reports. This last
+hierarchy has two levels.</p>
+</div>
+<div class="section" id="example-input">
+<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>5
+
+3 2
+1 2
+1 3
+
+3 1
+1 2
+1 3
+
+4 2
+4 2
+2 1
+3 2
+
+5 2
+5 2
+4 5
+2 1
+3 1
+
+6 3
+6 1
+4 2
+1 4
+5 6
+3 6
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>Case #1: 2
+Case #2: 3
+Case #3: 3
+Case #4: 3
+Case #5: 4
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.facebook.com/hackercup/problems.php?pid=299871816717968&amp;round=154897681286317">View online</a>.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="../round_2.html">Round 2</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="road_removal.html">Road Removal</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

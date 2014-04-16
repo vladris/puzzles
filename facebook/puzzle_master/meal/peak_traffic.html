@@ -1,0 +1,147 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Meal Difficulty Puzzles" href="../meal.html" />
+    <link rel="next" title="We Are The Swarm" href="swarm.html" />
+    <link rel="prev" title="Refrigerator Madness" href="fridge_madness.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="fridge_madness.html">Refrigerator Madness</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="swarm.html">We Are The Swarm</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="peak-traffic">
+<h1>Peak Traffic<a class="headerlink" href="#peak-traffic" title="Permalink to this headline">¶</a></h1>
+<p>Facebook is looking for ways to help users find out which friends they interact
+with the most on the site. Towards that end, you have collected data from your
+friends regarding who they interacted with on the site. Each piece of data
+represents a desirable but one-way interaction between one user of Facebook
+towards another user of Facebook. By finding groups of users who regularly
+interact with one another, you hope to help users determine who among their
+friends they spend the most time with online.</p>
+<p>Being a popular user, you have collected a lot of data; so much that you cannot
+possibly process it by hand. But being a programmer of no small repute, you
+believe you can write a program to do the analysis for you. You are interested
+in finding clusters of users within your data pool; in other words, groups of
+users who interact among one another. A cluster is defined as a set of at least
+three users, where every possible permutation of two users within the cluster
+have both received and sent some kind of interaction between the two.</p>
+<p>With your program, you wish to analyze the collected data and find out all
+clusters within.</p>
+<div class="section" id="input-specifications">
+<h2>Input specifications<a class="headerlink" href="#input-specifications" title="Permalink to this headline">¶</a></h2>
+<p>The input file consists of multiple lines of aggregated log data. Each line
+starts with a date entry, whose constituent parts are separated by single
+white spaces. The exact format of the date always follows the examples given
+below. Following the date is a single tab, and then the email address of the
+user who is performing the action. Following that email is another single tab
+and then finally the email of the Facebook user who receives the action. The
+last line of the file may or may not have a newline at its end.</p>
+<p>Example input file:</p>
+<div class="highlight-text"><div class="highlight"><pre>Thu Dec 11 17:53:01 PST 2008    a@facebook.com    b@facebook.com
+Thu Dec 11 17:53:02 PST 2008    b@facebook.com    a@facebook.com
+Thu Dec 11 17:53:03 PST 2008    a@facebook.com    c@facebook.com
+Thu Dec 11 17:53:04 PST 2008    c@facebook.com    a@facebook.com
+Thu Dec 11 17:53:05 PST 2008    b@facebook.com    c@facebook.com
+Thu Dec 11 17:53:06 PST 2008    c@facebook.com    b@facebook.com
+Thu Dec 11 17:53:07 PST 2008    d@facebook.com    e@facebook.com
+Thu Dec 11 17:53:08 PST 2008    e@facebook.com    d@facebook.com
+Thu Dec 11 17:53:09 PST 2008    d@facebook.com    f@facebook.com
+Thu Dec 11 17:53:10 PST 2008    f@facebook.com    d@facebook.com
+Thu Dec 11 17:53:11 PST 2008    e@facebook.com    f@facebook.com
+Thu Dec 11 17:53:12 PST 2008    f@facebook.com    e@facebook.com
+</pre></div>
+</div>
+<p>Every line in the input file will follow this format, you are guaranteed that
+your submission will run against well formed input files.</p>
+</div>
+<div class="section" id="output-specifications">
+<h2>Output specifications<a class="headerlink" href="#output-specifications" title="Permalink to this headline">¶</a></h2>
+<p>You must output all clusters detected from the input log file with size of at
+least 3 members. A cluster is defined as N &gt;= 3 users on Facebook that have
+send and received actions between all possible permutations of any two members
+within the cluster.</p>
+<p>Your program should print to standard out, exactly one cluster per line. Each
+cluster must have its member user emails in alphabetical order, separated by a
+comma and a single space character each. There must not be a comma (or white
+space) after the final email in the cluster; instead print a single new line
+character at the end of every line. The clusters themselves must be printed to
+standard out also in alphabetical order; treat each cluster as a whole string
+for purposes of alphabetical comparisons. Do not sort the clusters by size or
+any other criteria.</p>
+<p>Example output (newline at end of line):</p>
+<div class="highlight-text"><div class="highlight"><pre>a@facebook.com, b@facebook.com, c@facebook.com
+d@facebook.com, e@facebook.com, f@facebook.com
+</pre></div>
+</div>
+<p>Finally, any cluster that is a sub-cluster (in other words, all users within
+one cluster are also present in another) must be removed from the output. For
+this case, your program should only print the largest super-cluster that
+includes the other clusters. Your program must be fast, efficient, and able to
+handle extremely large input files.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="fridge_madness.html">Refrigerator Madness</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="swarm.html">We Are The Swarm</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

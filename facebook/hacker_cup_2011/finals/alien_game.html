@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Finals" href="../finals.html" />
+    <link rel="next" title="Party Time" href="party_time.html" />
+    <link rel="prev" title="Finals" href="../finals.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="../finals.html">Finals</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="party_time.html">Party Time</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="alien-game">
+<h1>Alien Game<a class="headerlink" href="#alien-game" title="Permalink to this headline">¶</a></h1>
+<p>Aliens on the Unknown planet have a tradition of playing a game called Loiten.
+It is played by two players who alternate turns. There are <strong>N</strong> buckets with
+apples standing in one line in front of the players. They are numbered from
+left to right with integers starting from 1.</p>
+<p>In one turn a player can select one of the buckets, which is not the first and
+not the last and has a positive number of apples in it, and move all of that
+bucket&#8217;s apples to the bucket adjacent to the left and at the same time move
+all of them to the bucket adjacent to the right. That&#8217;s right, the number of
+apples can be negative as it is a really strange planet. Thus, if there are 3
+consecutive buckets with the number of apples being <strong>x</strong>, <strong>y</strong>, <strong>z</strong>, then
+you can perform the move if <strong>y</strong> is greater than zero. The resulting capacity
+of the buckets will be as follows: <strong>x+y</strong>, <strong>-y</strong>, <strong>z+y</strong>. The first player
+who can&#8217;t make a move loses.</p>
+<p>You happen to know one of the aliens from the Unknown planet, named Popo. He is
+a very good Loiten player, and has reached the Loiten Finals. On the day prior
+to the game, he found out the number of apples in each of the buckets.
+Unfortunately, his memory is not that good, and he can&#8217;t remember the number of
+apples in the <strong>P</strong>-th bucket. He just remembers that it is a number with
+absolute value not greater than <strong>F</strong>.</p>
+<p>Now, he is asking you to help him to calculate his chances. The players at the
+Finals are so good that they only make optimal moves to maximize their chance
+of winning. If neither player can win, the game is considered a draw. You are
+to find the number of possible apple counts for the bucket with an unknown
+number of apples where Popo will win. Popo is also sure that he is the one to
+make the first turn.</p>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>The first line of the input file consists of a single number <strong>T</strong>, the number
+of test cases. Each test case begins with a line containing two integers <strong>N</strong>,
+the number of buckets and <strong>P</strong>, the number of the bucket with the unknown
+amount of apples. It is followed by a line containing <strong>N</strong> integers, the
+numbers of apples in the corresponding buckets. The Pth number on this line is
+the positive integer <strong>F</strong> and corresponds to the constraint on the number of
+apples in the <strong>P</strong>-th bucket.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>Output <strong>T</strong> lines, with the answer to each test case on a single line, the
+number of possible values for unknown bucket.</p>
+</div>
+<div class="section" id="constraints">
+<h2>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h2>
+<p><strong>T</strong> = 50</p>
+<p>1≤ <strong>P</strong> ≤ <strong>N</strong> ≤ 2,000.</p>
+<p>1≤ <strong>F</strong> ≤ 1,000,000,000,000.</p>
+<p>The number of apples in each bucket at the start of the game has an absolute
+value not greater than 1,000,000,000,000.</p>
+</div>
+<div class="section" id="example-input">
+<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>5
+3 2
+1 2 3
+3 2
+-2 1 -1
+4 2
+4 3 2 1
+4 3
+1 -2 3 -4
+5 3
+1 2 2 4 -1
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>Case #1: 2
+Case #2: 1
+Case #3: 5
+Case #4: 2
+Case #5: 2
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.facebook.com/hackercup/problems.php?pid=138120872919608&amp;round=188859297819219">View online</a>.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="../finals.html">Finals</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="party_time.html">Party Time</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>
