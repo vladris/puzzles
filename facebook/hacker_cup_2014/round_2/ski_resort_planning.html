@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Round 2" href="../round_2.html" />
+    <link rel="next" title="Round 3" href="../round_3.html" />
+    <link rel="prev" title="Magic Pairs" href="magic_pairs.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="magic_pairs.html">Magic Pairs</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="../round_3.html">Round 3</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="ski-resort-planning">
+<h1>Ski Resort Planning<a class="headerlink" href="#ski-resort-planning" title="Permalink to this headline">¶</a></h1>
+<p>Charlotte is a very successful Olympic skier. All the sponsor deals she landed
+during her career has made her very rich, so she has decided to retire from
+skiing. Charlotte has just bought an entire mountain, and is planning to build a
+ski resort there. The mountain has <strong>N</strong> interesting points, numbered 0, 1, ...,
+<strong>N</strong>-1. Point 0 is the top of the mountain. Point i is further down the
+mountain than point j if i &gt; j.</p>
+<p>For each point <strong>a</strong> &gt; 0, she has decided on a different point <strong>b</strong>, which has
+the following property: All paths from the top of the mountain to point a have
+to go through point <strong>b</strong>, and there is no point <strong>c</strong>, such that <strong>b &lt; c &lt; a</strong>
+and all paths from the top of the mountain to point a go through point <strong>c</strong>. A
+path can never go up the mountain.</p>
+<p>You have been given the task to plan where the slopes go. You can add slopes
+directly between any two different interesting points. How many ways can you lay
+out the slopes for her resort, while satisfying the conditions above?</p>
+<p>Two ways of laying out the slopes, <strong>X</strong> and <strong>Y</strong>, are different if there
+exists two interesting points <strong>a</strong> and <strong>b</strong>, such that the slope between <strong>a</strong>
+and <strong>b</strong> exists in <strong>X</strong> or <strong>Y</strong>, but not in the other.</p>
+<p>You can assume that the skiers will be able to get to a lift from any point, so
+you don&#8217;t have to worry about getting them all the way down for every path. You
+have to be able to reach all interesting points from the top.</p>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>The first line of the input consists of a single integer <strong>T</strong>, the number of
+test cases.</p>
+<p>Each test case starts with a line containing the integer <strong>N</strong>.</p>
+<p>The next line of each test case contains <strong>N-1</strong> integers, A<sub>1</sub>,
+A<sub>2</sub>, ..., A<sub>N-1</sub>, where A<sub>i</sub> is the lowest interesting
+point that all paths to point <strong>i</strong> has to pass through.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>For each test case <strong>i</strong> numbered from 1 to <strong>T</strong>, output &#8220;Case #i: &#8221;, followed
+by the number of ways you can lay out the slopes given the constraints in the
+input, modulo 1,000,000,007</p>
+</div>
+<div class="section" id="constraints">
+<h2>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h2>
+<p>1 ≤ <strong>T</strong> ≤ 20</p>
+<p>2 ≤ <strong>N</strong> ≤ 5000</p>
+<p>A<sub>i</sub> &lt; <strong>i</strong> for each of A<sub>1</sub>, A<sub>2</sub>, ..., A<sub>N-1</sub></p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>The first example has to have the following slopes:</p>
+<p>0 -&gt; 1</p>
+<p>0 -&gt; 2</p>
+<p>1 -&gt; 3</p>
+<p>In addition, we can choose whether or not to add the slope</p>
+<p>1 -&gt; 2</p>
+<p>The total will be 2; one for adding the slope and one for not adding it.</p>
+</div>
+<div class="section" id="example-input">
+<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>5
+4
+0 0 1
+6
+0 0 0 2 2
+2
+0
+3
+0 0
+3
+0 1
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>Case #1: 2
+Case #2: 20
+Case #3: 1
+Case #4: 2
+Case #5: 1
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.facebook.com/hackercup/problems.php?pid=264320743716595&amp;round=544142832342014">View online</a>.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="magic_pairs.html">Magic Pairs</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="../round_3.html">Round 3</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

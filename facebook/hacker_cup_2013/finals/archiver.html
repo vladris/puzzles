@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Finals" href="../finals.html" />
+    <link rel="next" title="Colored Trees" href="colored_trees.html" />
+    <link rel="prev" title="Finals" href="../finals.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="../finals.html">Finals</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="colored_trees.html">Colored Trees</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="archiver">
+<h1>Archiver<a class="headerlink" href="#archiver" title="Permalink to this headline">¶</a></h1>
+<p>You are writing a new revolutionary archiver. The archive is essentially a pair
+of non-decreasing sequences of integers of equal length <strong>K</strong>:
+0≤x<sub>1</sub>≤...≤x<sub>k</sub> and 0≤y<sub>1</sub>≤...≤y<sub>k</sub>.</p>
+<p>The decompression algorithm proceeds as follows:</p>
+<ol class="arabic simple">
+<li>Sequence (0,0), (x<sub>1</sub>, y<sub>1</sub>), ... (x<sub>k</sub>, y<sub>k</sub>),
+(x<sub>k</sub>, 0), (0, 0) defines a polygon <strong>P</strong></li>
+<li>Starting from the point <strong>(0,0)</strong>, increase either <strong>x</strong> or <strong>y</strong> coordinate
+by 1 without moving outside of <strong>P</strong>. If both moves are available, you
+should increase <strong>y</strong>. After each step write <strong>0</strong> to output if incremented
+<strong>x</strong> or <strong>1</strong> otherwise.</li>
+<li>Repeat step 2 until you end up in point (x<sub>k</sub>, y<sub>k</sub>).</li>
+</ol>
+<p>Example: decompression of sequence <strong>(3,4), (7,6), (7,8)</strong> will produce string
+<strong>010101100100111</strong>.</p>
+<p>Your task is to write a compression rate calculator, that is given binary
+string s find the smallest value of <strong>K</strong> for which there exists archive that
+decompresses to s.</p>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>The first line contains a single integer <strong>T</strong>, <strong>T</strong> ≤ 20. T test cases
+follow, where each test case consists of one binary string with length
+<strong>≤ 1000000</strong>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>Output a single line containing the smallest possible <strong>K</strong>.</p>
+</div>
+<div class="section" id="example-input">
+<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>5
+001
+10011
+0010101
+1110
+0110
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>Case #1: 1
+Case #2: 3
+Case #3: 1
+Case #4: 2
+Case #5: 2
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.facebook.com/hackercup/problems.php?pid=553275214705025&amp;round=430084003727512">View online</a>.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="../finals.html">Finals</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="colored_trees.html">Colored Trees</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

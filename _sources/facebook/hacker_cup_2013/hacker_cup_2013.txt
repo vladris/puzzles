@@ -8,3 +8,4 @@ Facebook Hacker Cup 2013
     round_1
     round_2
     round_3
+    finals

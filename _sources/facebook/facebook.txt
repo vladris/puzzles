@@ -11,4 +11,5 @@ These are puzzles proposed by Facebook Inc. and licensed under the
     hacker_cup_2011/hacker_cup_2011
     hacker_cup_2012/hacker_cup_2012
     hacker_cup_2013/hacker_cup_2013
+    hacker_cup_2014/hacker_cup_2014
 

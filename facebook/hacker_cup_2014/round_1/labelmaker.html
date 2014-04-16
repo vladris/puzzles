@@ -1,0 +1,131 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Round 1" href="../round_1.html" />
+    <link rel="next" title="Preventing Alzheimer’s" href="preventing_alzheimers.html" />
+    <link rel="prev" title="Coins Game" href="coins_game.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="coins_game.html">Coins Game</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="preventing_alzheimers.html">Preventing Alzheimer&#8217;s</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="labelmaker">
+<h1>Labelmaker<a class="headerlink" href="#labelmaker" title="Permalink to this headline">¶</a></h1>
+<p>David is labelling boxes in a giant warehouse. He has a <em>lot</em> of boxes to
+label, but unfortunately his labeling machine is broken, so only some of the
+letters work. In order to be efficient, David labels the boxes by first using
+every possible 1-letter label in alphabetical order, then using every possible
+2-letter label in alphabetical order, then every 3-letter label, etc.</p>
+<p>For example, suppose only the letters &#8216;D&#8217;, &#8216;T&#8217;, and &#8216;Z&#8217; work. David would label
+the first 15 boxes as follows: D, T, Z, DD, DT, DZ, TD, TT, TZ, ZD, ZT, ZZ,
+DDD, DDT, DDZ. The first box is considered box #1, not box #0.</p>
+<p>Given a set of working letters <strong>L</strong> on David&#8217;s labelling machine and a number
+<strong>N</strong> of boxes to label, return the label on the last box.</p>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>The first line of the input consists of a single integer <strong>T</strong>, the number of
+test cases. Each test case consists of the string <strong>L</strong> and the integer <strong>N</strong>,
+separated by a space.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>For each test case <strong>i</strong> numbered from 1 to <strong>T</strong>, output &#8220;Case #i: &#8221;, followed
+by the label on the last box.</p>
+</div>
+<div class="section" id="constraints">
+<h2>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h2>
+<p>1 ≤ <strong>T</strong> ≤ 20</p>
+<p>1 ≤ length(<strong>L</strong>) ≤ 25</p>
+<p><strong>L</strong> will be in alphabetical order, consist of only uppercase letters A-Z, and
+contain each letter at most once</p>
+<p>1 ≤ <strong>N</strong> ≤ 2<sup>63</sup>-1</p>
+<p>The test cases will be designed so that no label is longer than 50 letters</p>
+</div>
+<div class="section" id="example-input">
+<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>5
+EHT 34
+ABCEFKO 4296473
+ACEHKMPRTU 4125383079316
+CDEGHIKLOSUWY 8333092520403744490
+ADEFHNOPSUVY 3365973428406169086
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>Case #1: THE
+Case #2: FACEBOOK
+Case #3: HACKERCUPTEAM
+Case #4: WISHESYOUGOODLUCK
+Case #5: ANDHOPESYOUHAVEFUN
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.facebook.com/hackercup/problems.php?pid=637270059647812&amp;round=1437956993099239">View online</a>.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="coins_game.html">Coins Game</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="preventing_alzheimers.html">Preventing Alzheimer&#8217;s</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

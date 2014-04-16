@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Qualification Round" href="../qualification.html" />
+    <link rel="next" title="Round 1" href="../round_1.html" />
+    <link rel="prev" title="Square Detector" href="square_detector.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="square_detector.html">Square Detector</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="../round_1.html">Round 1</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="tennison">
+<h1>Tennison<a class="headerlink" href="#tennison" title="Permalink to this headline">¶</a></h1>
+<p>You may be familiar with the works of Alfred Lord Tennyson, the famous English
+poet. In this problem we will concern ourselves with Tennison, the less famous
+English tennis player. As you know, tennis is not so much a game of skill as a
+game of luck and weather patterns. The goal of tennis is to win <strong>K</strong> sets
+before the other player. However, the chance of winning a set is largely
+dependent on whether or not there is weather.</p>
+<p>Tennison plays best when it&#8217;s sunny, but sometimes of course, it rains.
+Tennison wins a set with probability p<sub>s</sub> when it&#8217;s sunny, and with
+probability p<sub>r</sub> when it&#8217;s raining. The chance that there will be sun
+for the first set is p<sub>i</sub>. Luckily for Tennison, whenever he wins a
+set, the probability that there will be sun increases by p<sub>u</sub> with
+probability p<sub>w</sub>. Unfortunately, when Tennison loses a set, the
+probability of sun decreases by p<sub>d</sub> with probability p<sub>l</sub>.
+What is the chance that Tennison will be successful in his match?</p>
+<p>Rain and sun are the only weather conditions, so P(rain) = 1 - P(sun) at all
+times. Also, probabilities always stay in the range [0, 1]. If P(sun) would
+ever be less than 0, it is instead 0. If it would ever be greater than 1, it is
+instead 1.</p>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>Input begins with an integer <strong>T</strong>, the number of tennis matches that Tennison
+plays. For each match, there is a line containing an integer <strong>K</strong>, followed by
+the probabilities p<sub>s</sub>, p<sub>r</sub>, p<sub>i</sub>, p<sub>u</sub>,p <sub>w</sub>,
+p<sub>d</sub>, p<sub>l</sub> in that order. All of these values are given with
+exactly three places after the decimal point.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>For each match, output &#8220;Case #i: &#8221; followed by the probability that Tennison
+wins the match, rounded to 6 decimal places (quotes for clarity only). It is
+guaranteed that the output is unaffected by deviations as large as 10 <sup>-8</sup>.</p>
+</div>
+<div class="section" id="constraints">
+<h2>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h2>
+<p>1 ≤ <strong>T</strong> ≤ 100</p>
+<p>1 ≤ <strong>K</strong> ≤ 100</p>
+<p>0 ≤ p<sub>s</sub>, p<sub>r</sub>, p<sub>i</sub>, p<sub>u</sub>, p<sub>w</sub>, p<sub>d</sub>,
+p<sub>l</sub> ≤ 1</p>
+<p>p<sub>s</sub> &gt; p<sub>r</sub></p>
+</div>
+<div class="section" id="example-input">
+<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>5
+1 0.800 0.100 0.500 0.500 0.500 0.500 0.500
+2 0.600 0.200 0.500 0.100 1.000 0.100 1.000
+1 1.000 0.000 1.000 1.000 1.000 1.000 1.000
+25 0.984 0.222 0.993 0.336 0.207 0.084 0.478
+58 0.472 0.182 0.418 0.097 0.569 0.816 0.711
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>Case #1: 0.450000
+Case #2: 0.352000
+Case #3: 1.000000
+Case #4: 0.999956
+Case #5: 0.000000
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.facebook.com/hackercup/problems.php?pid=373965339404375&amp;round=598486203541358">View online</a>.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="square_detector.html">Square Detector</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="../round_1.html">Round 1</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

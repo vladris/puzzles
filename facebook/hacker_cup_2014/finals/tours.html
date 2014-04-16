@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Finals" href="../finals.html" />
+    <link rel="prev" title="Lunch at Facebook" href="lunch_at_facebook.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="lunch_at_facebook.html">Lunch at Facebook</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="tours">
+<h1>Tours<a class="headerlink" href="#tours" title="Permalink to this headline">¶</a></h1>
+<p>Facebook HQ &#8211; a mysterious place full of magical code and trade secrets. If
+outsiders were ever to breach the walls of the compound, which are protected by
+a legion of security foxes, the entire company could well be brought to its
+knees!</p>
+<p>Hmmm. Actually, campus tours are given regularly.</p>
+<p>The compound consists of <strong>N</strong> buildings, with <strong>M</strong> walkways running amongst
+them. The i<sup>th</sup> walkway connects buildings A<sub>i</sub> and
+B<sub>i</sub>, (A<sub>i</sub> != B<sub>i</sub>) and no two buildings are
+directly connected by more than one walkway. There are no other ways to move
+from building to building.</p>
+<p>Over a period of <strong>D</strong> days, some events will occur at Facebook HQ. One of two
+types of events will happen on the i<sup>th</sup> day, indicated by a character
+E<sub>i</sub>. If E<sub>i</sub> = &#8216;T&#8217;, then a tour will take place. Otherwise,
+E<sub>i</sub> = &#8216;S&#8217;, and a security sweep of one building will take place.</p>
+<p>If a tour is given on the i<sup>th</sup> day, visitors will plan to enter the
+compound at building X<sub>i</sub>, and leave from building Y<sub>i</sub>
+(X<sub>i</sub> != Y<sub>i</sub>). If it turns out that these two buildings
+are not actually connected by any sequence of walkways, then the tour will be
+cancelled, and the unfortunate visitors will be given Facebook T-shirts on the
+way out. Otherwise, a large number of people will be led from building
+X<sub>i</sub> to building Y<sub>i</sub> along various routes. No route will
+involve travelling along the same walkway multiple times (even in different
+directions), but a route might revisit the same building repeatedly, including
+buildings X<sub>i</sub> and Y<sub>i</sub>. Along the way some visitors will
+inevitably get themselves &#8220;lost&#8221;, and fail to rejoin the tour group. In total,
+O<sub>i</sub> new outsiders will be left behind in each building which could
+possibly be part of any valid tour route from building X<sub>i</sub> and
+building Y<sub>i</sub>. Good thing they&#8217;ll no doubt have brought cameras to
+amuse themselves with while they wait to be found.</p>
+<p>On the other hand, if a security sweep is conducted on the i<sup>th</sup> day,
+then the security foxes will carefully search building Zsub:<cite>i</cite> for any
+trespassers remaining from previous tours, and kindly escort them out.</p>
+<p>Since Facebook likes data, you&#8217;ve been hired to record how many outsiders were
+found in each sweep.</p>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>Input begins with an integer <strong>T</strong>, the number of test cases. Each test case
+begins with a line containing three integers, <strong>N</strong>, <strong>M</strong>, and <strong>D</strong>. The next
+<strong>M</strong> lines contain two integers A<sub>i</sub> and B<sub>i</sub>. The next
+<strong>D</strong> lines contain a character E<sub>i</sub>, followed by either three
+integers X<sub>i</sub>, Y<sub>i</sub>, O<sub>i</sub> if E<sub>i</sub> = &#8216;T&#8217;,
+or a single integer Z<sub>i</sub> if E<sub>i</sub> = &#8216;S&#8217;.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>For each test case <em>i</em>, output &#8220;Case #i: &#8221; followed by the total number of
+visitors the foxes escort off the campus. Since this number may be quite large,
+output it modulo 1,000,000,007.</p>
+</div>
+<div class="section" id="constraints">
+<h2>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h2>
+<p>1 ≤ <strong>T</strong> ≤ 20</p>
+<p>1 ≤ <strong>N</strong> ≤ 105</p>
+<p>1 ≤ <strong>M</strong> ≤ 106</p>
+<p>1 ≤ <strong>D</strong> ≤ 106</p>
+<p>1 ≤ O<sub>i</sub> ≤ 1,000</p>
+<p>1 ≤ A<sub>i</sub>, B<sub>i</sub>, X<sub>i</sub>, Y<sub>i</sub>, Z<sub>i</sub> ≤ <strong>N</strong></p>
+</div>
+<div class="section" id="explanation-of-sample">
+<h2>Explanation of Sample<a class="headerlink" href="#explanation-of-sample" title="Permalink to this headline">¶</a></h2>
+<p>In the first sample case:</p>
+<p>On the first day, a tour is given from building 1 to building 2. The only valid
+route consists of simply crossing the walkway between these two buildings. As
+such, by the end of the day, 5 outsiders are left hiding in each of buildings 1
+and 2.</p>
+<p>On the second day, the tour cannot take place.</p>
+<p>On the third and fourth days, security sweeps of buildings 2 and 6 are carried
+out, with 5 and 0 outsiders found respectively.</p>
+<p>On the fifth day, a tour is given from building 2 to building 3. There are
+exactly three valid routes (2, 3), (2, 3, 4, 5, 3), (2, 3, 5, 4, 3). As such,
+one new outsider remains behind in each of buildings 2, 3, 4, and 5.</p>
+<p>On the sixth day, the valid tour routes are (5, 3) and (5, 4, 3), so 14 new
+outsiders take up residence in each of buildings 3, 4, and 5.</p>
+<p>Finally, security sweeps of buildings 1, 2, and 4 are conducted evicting 5, 1,
+and 15 people respectively, for a grand total of 26.</p>
+</div>
+<div class="section" id="example-input">
+<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>5
+6 5 9
+1 2
+2 3
+3 4
+4 5
+5 3
+T 1 2 5
+T 5 6 1000
+S 2
+S 6
+T 2 3 1
+T 5 3 14
+S 1
+S 2
+S 4
+2 1 3
+1 2
+T 1 2 10
+S 1
+S 2
+3 2 4
+1 2
+2 3
+T 1 3 10
+T 2 3 5
+S 1
+S 3
+3 3 4
+1 2
+2 3
+3 1
+T 1 3 10
+T 2 3 5
+S 1
+S 3
+3 1 4
+1 2
+T 1 2 10
+T 1 3 10
+S 1
+S 3
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>Case #1: 26
+Case #2: 20
+Case #3: 25
+Case #4: 30
+Case #5: 10
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.facebook.com/hackercup/problems.php?pid=638015132901061&amp;round=180228228840273">View online</a>.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="lunch_at_facebook.html">Lunch at Facebook</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

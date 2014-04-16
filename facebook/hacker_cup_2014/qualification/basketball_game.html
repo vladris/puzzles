@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Qualification Round" href="../qualification.html" />
+    <link rel="next" title="Square Detector" href="square_detector.html" />
+    <link rel="prev" title="Qualification Round" href="../qualification.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="../qualification.html">Qualification Round</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="square_detector.html">Square Detector</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="basketball-game">
+<h1>Basketball Game<a class="headerlink" href="#basketball-game" title="Permalink to this headline">¶</a></h1>
+<p>A group of <strong>N</strong> high school students wants to play a basketball game. To
+divide themselves into two teams they first rank all the players in the
+following way:</p>
+<p>Players with a higher shot percentage are rated higher than players with a
+lower shot percentage. If two players have the same shot percentage, the taller
+player is rated higher.</p>
+<p>Luckily there are no two players with both the same shot percentage and height
+so they are able to order themselves in an unambiguous way. Based on that
+ordering each player is assigned a draft number from the range [1 .. <strong>N</strong>],
+where the highest-rated player gets the number 1, the second highest-rated gets
+the number 2, and so on. Now the first team contains all the players with the
+odd draft numbers and the second team all the players with the even draft
+numbers.</p>
+<p>Each team can only have <strong>P</strong> players playing at a time, so to ensure that
+everyone gets similar time on the court both teams will rotate their players
+according to the following algorithm:</p>
+<p>Each team starts the game with the <strong>P</strong> players who have the lowest draft
+numbers.</p>
+<p>If there are more than <strong>P</strong> players on a team after each minute of the game
+the player with the highest total time played leaves the playing field. Ties
+are broken by the player with the higher draft number leaving first.</p>
+<p>To replace her the player on the bench with the lowest total time played joins
+the game. Ties are broken by the player with the lower draft number entering
+first.</p>
+<p>The game has been going on for <strong>M</strong> minutes now. Your task is to print out the
+names of all the players currently on the field, (that is after <strong>M</strong>
+rotations).</p>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>The first line of the input consists of a single number <strong>T</strong>, the number of
+test cases.</p>
+<p>Each test case starts with a line containing three space separated integers
+<strong>N M P</strong></p>
+<p>The subsequent <strong>N</strong> lines are in the format &#8220;&lt;name&gt; &lt;shot_percentage&gt;
+&lt;height&gt;&#8221;. See the example for clarification.</p>
+</div>
+<div class="section" id="constraints">
+<h2>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h2>
+<p>1 ≤ <strong>T</strong> ≤ 50</p>
+<p>2 * <strong>P</strong> ≤ <strong>N</strong> ≤ 30</p>
+<p>1 ≤ <strong>M</strong> ≤ 120</p>
+<p>1 ≤ <strong>P</strong> ≤ 5</p>
+<p>Each name starts with an uppercase English letter, followed by 0 to 20
+lowercase English letters. There can be players sharing the same name. Each
+shot percentage is an integer from the range [0..100]. Each height is an
+integer from the range [100..240]</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>For each test case <strong>i</strong> numbered from 1 to <strong>T</strong>, output &#8220;Case #i: &#8221;, followed
+by 2 * <strong>P</strong> space separated names of the players playing after <strong>M</strong>
+rotations. The names should be printed in lexicographical order.</p>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>In the first example if you sort all the players by their shot percentage you
+get the list: [Wai, Purav, Weiyan, Slawek, Lin, Meihong]. This makes the two
+teams:</p>
+<p>[Wai, Weiyan, Lin]
+[Purav, Slawek, Meihong]</p>
+<p>The game starts with Lin and Meihong sitting on the bench in their respective
+teams. After the first minute passes it&#8217;s time for Weiyan and Slawek to sit out
+since they have the highest draft numbers of the people who played. After the
+second minute passes Lin and Meihong will keep playing since they only played
+one minute so far and it&#8217;s Wai and Purav who have to sit out.</p>
+<p>Finally after the third minute Lin and Maihong go back to the bench and all the
+players currently playing again are:</p>
+<p><cite>Purav Slawek Wai Weiyan</cite></p>
+</div>
+<div class="section" id="example-input">
+<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>5
+6 3 2
+Wai 99 131
+Weiyan 81 155
+Lin 80 100
+Purav 86 198
+Slawek 80 192
+Meihong 44 109
+7 93 2
+Paul 82 189
+Kittipat 62 126
+Thomas 17 228
+Fabien 57 233
+Yifei 65 138
+Liang 92 100
+Victor 53 124
+6 62 3
+Meihong 33 192
+Duc 62 162
+Wai 70 148
+Fabien 19 120
+Bhuwan 48 176
+Vlad 30 225
+8 59 3
+Anil 38 180
+Song 7 187
+David 65 159
+Lin 45 121
+Ranjeeth 39 183
+Torbjorn 26 181
+Clifton 57 158
+Phil 3 183
+4 72 1
+Anh 2 187
+Erling 69 226
+Purav 0 199
+Zejia 29 163
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>Case #1: Purav Slawek Wai Weiyan
+Case #2: Fabien Kittipat Liang Paul
+Case #3: Bhuwan Duc Fabien Meihong Vlad Wai
+Case #4: Anil Lin Phil Ranjeeth Song Torbjorn
+Case #5: Erling Zejia
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.facebook.com/hackercup/problems.php?pid=740733162607577&amp;round=598486203541358">View online</a>.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="../qualification.html">Qualification Round</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="square_detector.html">Square Detector</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>

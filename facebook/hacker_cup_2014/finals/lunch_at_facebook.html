@@ -1,0 +1,158 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Puzzles</title>
+
+    
+    <link rel="stylesheet" href="../../../_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/theme_extras.js"></script>
+    <link rel="top" title="Puzzles 1.0 documentation" href="../../../index.html" />
+    <link rel="up" title="Finals" href="../finals.html" />
+    <link rel="next" title="Tours" href="tours.html" />
+    <link rel="prev" title="Intervals of Love" href="intervals_of_love.html" /> 
+  </head>
+  <body>
+      <div class="header">
+    <h1 class="heading">
+        <a href="../../../index.html">
+          <span>Puzzles</span>
+        </a>
+    </h1>
+
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="intervals_of_love.html">Intervals of Love</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="tours.html">Tours</a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="lunch-at-facebook">
+<h1>Lunch at Facebook<a class="headerlink" href="#lunch-at-facebook" title="Permalink to this headline">¶</a></h1>
+<p>What&#8217;s the best thing about working at Facebook? It&#8217;s hard to say, but the free
+food doesn&#8217;t hurt. Every day there are long lines for food, and sometimes
+guests visit the campus, as hungry as everybody else. It pays to be a good host,
+so sometimes we&#8217;ll let guests cut ahead in the line. But obviously nobody wants
+to miss out on delicious Facebook food.</p>
+<p>Every day, <strong>N</strong> Facebook employees are lined up for lunch, and every day <strong>M</strong>
+visitors come to the campus looking for food. Each person has an appetite
+A<sub>i</sub>, which is a positive integer. Curiously, no two people have the
+same appetite.</p>
+<p>If people with large appetites eat first, there&#8217;s a concern that the food might
+run out before the people at the back get to eat, so it&#8217;s ideal to have people
+with smaller appetites further ahead in the line. With this in mind, we&#8217;d like
+to squeeze all of the guests into the lunch line as efficiently as possible.</p>
+<p>We define the <em>unsuitableness</em> of a line as the number of pairs of people in
+the line, P<sub>i</sub> and P:sub: <cite>j</cite>, such that P<sub>i</sub> is ahead
+of P<sub>j</sub> in the line, and P<sub>i</sub> has a larger appetite than
+P<sub>j</sub>. Your task is to find a way to get all the visitors into the
+lunch line such that the unsuitableness of the resulting line is minimized. The
+employees that are standing in line won&#8217;t change order, but you can put guests
+in any place you want.</p>
+<div class="section" id="input">
+<h2>Input<a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>The first line contains an integer <strong>T</strong>, the number of test cases.</p>
+<p>Each test case has three lines:</p>
+<p>A line with <strong>N</strong> and <strong>M</strong>.</p>
+<p>A line with <strong>N</strong> integers, the appetites of the employees in order, beginning
+with the first employee.</p>
+<p>A line with <strong>M</strong> integers, the appetites of the visitors.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>For each test case <em>i</em>, output &#8220;Case #i: &#8221; followed by the minimum possible
+unsuitableness of the resulting line.</p>
+</div>
+<div class="section" id="constraints">
+<h2>Constraints<a class="headerlink" href="#constraints" title="Permalink to this headline">¶</a></h2>
+<p>1 ≤ <strong>T</strong> ≤ 20
+1 ≤ <strong>N</strong> ≤ 105
+1 ≤ <strong>M</strong> ≤ 105
+1 ≤ A<sub>i</sub> ≤ 109</p>
+</div>
+<div class="section" id="explanation-of-sample">
+<h2>Explanation of Sample<a class="headerlink" href="#explanation-of-sample" title="Permalink to this headline">¶</a></h2>
+<p>For the first test case the optimal lunch line has the following appetites in
+order: 1, 2, 3, 4</p>
+<p>For the second test case the optimal lunch line is: 1, 2, 4, 7, 5, 3</p>
+</div>
+<div class="section" id="example-input">
+<h2>Example input<a class="headerlink" href="#example-input" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>5
+2 2
+1 2
+3 4
+4 2
+1 7 5 3
+2 4
+10 5
+9 3 14 13 7 10 12 1 6 8
+2 15 5 4 11
+10 5
+7 9 3 14 10 4 5 1 13 6
+2 15 11 8 12
+10 5
+2 8 10 7 12 5 13 11 4 6
+3 9 14 15 1
+</pre></div>
+</div>
+</div>
+<div class="section" id="example-output">
+<h2>Example output<a class="headerlink" href="#example-output" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-text"><div class="highlight"><pre>Case #1: 0
+Case #2: 4
+Case #3: 35
+Case #4: 33
+Case #5: 25
+</pre></div>
+</div>
+<p><a class="reference external" href="https://www.facebook.com/hackercup/problems.php?pid=582461561843577&amp;round=180228228840273">View online</a>.</p>
+</div>
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="intervals_of_love.html">Intervals of Love</a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="../../../index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="tours.html">Tours</a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2b1.
+    </div>
+  </body>
+</html>
