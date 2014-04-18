@@ -2,8 +2,8 @@ Permutations
 ============
 
 In this problem you need to count number of possible permutations **p** of the
-first **N** integers, given **N-1** constraints of the form **p\ :sub:`i` < p\
-:sub:`j`**.
+first **N** integers, given **N-1** constraints of the form **p**\ :sub:`i` 
+< **p**\ :sub:`j`.
 
 Input
 -----
