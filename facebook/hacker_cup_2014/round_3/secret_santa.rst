@@ -40,8 +40,11 @@ Constraints
 -----------
 
 1 ≤ **T** ≤ 20
+
 2 ≤ **K** ≤ 100
+
 1 ≤ n\ :sub:`i` ≤ 4
+
 1 ≤ n\ :sub:`1` + n\ :sub:`2` + ... + n\ :sub:`K` ≤ 100
 
 Example input
