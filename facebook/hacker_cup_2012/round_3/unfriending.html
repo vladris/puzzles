@@ -58,10 +58,10 @@
 <h1>Unfriending<a class="headerlink" href="#unfriending" title="Permalink to this headline">¶</a></h1>
 <p>It&#8217;s time to clean up your friends list after friending too many people on
 Facebook over the winter. The set of your friends&#8217; user ids is <strong>F</strong> = {
-<strong>x:sub:`0`</strong>, <strong>x:sub:`1`</strong>, ..., <strong>x:sub:`n-1`</strong>}. Each friend from
+<strong>x</strong><sub>0</sub>, <strong>x</strong><sub>1</sub>, ..., <strong>x</strong><sub>n-1</sub>}. Each friend from
 <strong>F</strong> is on zero or more friend lists that you use to organize your friends.
-There are <strong>M</strong> friend lists, <strong>c:sub:`0`</strong>, <strong>c:sub:`1`</strong>, ...,
-<strong>c:sub:`m-1`</strong>. You can unfriend (remove from <strong>F</strong>) some of your friends,
+There are <strong>M</strong> friend lists, <strong>c</strong><sub>0</sub>, <strong>c</strong><sub>1</sub>, ...,
+<strong>c</strong><sub>m-1</sub>. You can unfriend (remove from <strong>F</strong>) some of your friends,
 but because you want to stay in touch with people, you can only unfriend one
 person from each friend list. You may also choose not to unfriend anyone from
 friend list. Any friend that isn&#8217;t on a friend list cannot be unfriended.</p>
@@ -74,18 +74,18 @@ distance between user id <strong>x</strong> and user id <strong>y</strong> is de
 <strong>T</strong> test cases follow.</p>
 <p>The first line of each test case contains the number of friends <strong>N</strong>, and
 number of friend lists <strong>M</strong>, separated by a space. The second line contains
-<strong>x:sub:`0`</strong> and integer parameters <strong>a</strong>, <strong>b</strong>, and <strong>p</strong>, separated by
-spaces. You must use these to generate the remaining numbers <strong>x:sub:`1`</strong>,
-…, <strong>x:sub:`n-1`</strong> according to this formula:</p>
+<strong>x</strong><sub>0</sub> and integer parameters <strong>a</strong>, <strong>b</strong>, and <strong>p</strong>, separated by
+spaces. You must use these to generate the remaining numbers <strong>x</strong><sub>1</sub>,
+…, <strong>x</strong><sub>n-1</sub> according to this formula:</p>
 <blockquote>
-<div><strong>x:sub:`i`</strong> = (<strong>x:sub:`i-1`</strong> * <strong>a</strong> + <strong>b</strong>) mod <strong>p</strong></div></blockquote>
+<div><strong>x</strong><sub>i</sub> = (<strong>x</strong><sub>i-1</sub> * <strong>a</strong> + <strong>b</strong>) mod <strong>p</strong></div></blockquote>
 <p>The next <strong>M</strong> lines of each test case define the friend lists for that test
 case. Each line consists of the following integers, separated by spaces:
-<strong>size</strong>, <strong>y:sub:`0`</strong>, <strong>a</strong>, <strong>b</strong>. The size is the number of friends in
-the friend list. <strong>y:sub:`0`</strong> is the index in F of the first friend in the
-list. You must generate the remaining friends in the friend list <strong>y:sub:`1`</strong>, …, <strong>y:sub:`n-1`</strong> according to the following formula:</p>
+<strong>size</strong>, <strong>y</strong><sub>0</sub>, <strong>a</strong>, <strong>b</strong>. The size is the number of friends in
+the friend list. <strong>y</strong><sub>0</sub> is the index in F of the first friend in the
+list. You must generate the remaining friends in the friend list <strong>y</strong><sub>1</sub>, …, <strong>y</strong><sub>n-1</sub> according to the following formula:</p>
 <blockquote>
-<div><strong>y:sub:`i`</strong> = (<strong>y:sub:`i-1`</strong> * <strong>a</strong> + <strong>b</strong>) mod <strong>n</strong></div></blockquote>
+<div><strong>y</strong><sub>i</sub> = (<strong>y</strong><sub>i-1</sub> * <strong>a</strong> + <strong>b</strong>) mod <strong>n</strong></div></blockquote>
 <p>If a friend list contains more than one of a given index, consider it to only
 contain that index once.</p>
 </div>
